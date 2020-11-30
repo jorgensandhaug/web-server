@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input[type="radio"]{
+            width: 20px;
+            height: 20px;
+        }
+        #video{
+            display: none;
+            width: 300px;
+            border-radius: 150px;
+            border: 3px black solid;
+        }
+        #audio{
+            display: none;
+        }
+        #image{
+            display: none;
+        }
+        #box{
+            display: none;
+        }
+        #ans{
+            display: none;
+        }
+        #message{
+            display: none;
+        }
+        #points{
+            margin: 0px;
+            display: none;
+        }
+        body{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            background-image:url(back3.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #wrapper{
+            font-size: 30px;
+            background-color: teal;
+            color: white;
+            min-height: 600px;
+            min-width: 900px;
+            display: grid;
+            place-items: center;
+            border: 3px black solid;
+            border-radius: 300px;
+            box-shadow: 
+            inset 0 -2em 2em rgba(0, 0, 0, 0.5),
+                0 0  0 rgb(255, 255, 255),
+                0.8em 0.8em 2em rgba(65, 46, 46, 0.9);
+        }
+        button{
+            display: flex;
+            padding: 10px 45px;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 40px;
+            color: white;
+            background: rgb(74, 57, 112);
+            transition: 1s;
+            box-shadow: 6px 6px 0 black;
+            transform: skewX(-15deg);
+        }
+        #top{
+            display: grid;
+            place-items: center;
+        }
+        #name{
+            width: 250px;
+            height: 25px;
+            font-size: 20px;
+            border: 2px solid black;
+            border-radius: 4px;
+        }
+        #result{
+            display: none;
+        }
+        canvas{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="top">
+            <h1>Dyrequiz</h1>
+            <p id="points"></p>
+            <input type="text" id="name" placeholder="Fyll inn ditt navn">
+        </div>
+        <button id="start">Start quiz</button>
+        <video src="" id="video"></video>
+        <audio controls src="" id="audio"></audio>
+        <div id="box">
+            <input type="radio" name="a"><label></label>
+            <input type="radio" name="a"><label></label>
+            <input type="radio" name="a"><label></label>
+            <input type="radio" name="a"><label></label>
+        </div>
+        <button id="ans">Avgi svar</button>
+        <canvas></canvas>
+        <p id="message"></p>
+        <button id="result">Vis resultat</button>
+        <br><br>
+    </div>
+
+    <script src="quiz.js"></script>
+</body>
+</html>

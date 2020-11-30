@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Amatic SC;
+  font-size: 30px;
+}
+
+body {
+  background-color: rgb(248, 255, 121)
+}
+
+#innpakning {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+ h1 {
+  font-size: 60px;
+}
+
+canvas {
+  background-color: white;
+  border: 1px black solid;
+}
+
+input [type="text"] {
+  width: 60%;
+  color: red;
+}
+
+#spillSlutt {
+  font-size: 70px;
+  width: 600px;
+  margin: 0 auto;
+  display: none;
+}
+
+#spillSlutt button {
+  font-size: 40px;
+  width: 550px;
+  height: 200px;
+}
+
+#spillSlutt button:hover {
+  background-color: rgb(161, 161, 161);
+  font-weight: bold;
+  cursor: pointer;
+
+}
+
+#splillSluttMelding {
+font-size: 70px;
+width: 600px;
+margin: 0 auto;
+}
+
+#kategoriDiv {
+  width: 500px;
+  margin: 0 auto;
+  font-size: 40px;
+  text-align: center;
+  display: grid;
+  height: 100vh;
+  align-items: center;
+  grid-gap: 100px;
+}
+
+#kategoriDiv h1, button {
+  margin-bottom: 1em;
+}
+
+#kategoriDiv button {
+  width: 200px;
+}
+
+#kategoriDiv button:hover {
+  cursor: pointer;
+}
+
+#vanskelighetsDiv {
+  width: 500px;
+  margin: 0 auto;
+  font-size: 40px;
+  text-align: center;
+  display: grid;
+  height: 100vh;
+  align-items: center;
+  grid-gap: 100px;
+  justify-content: center;
+}
+
+#vanskelighetsDiv h1, button {
+  margin-bottom: 1em;
+}
+
+#vanskelighetsDiv button {
+  width: 200px;
+}
+
+#vanskelighetsDiv button:hover {
+  cursor: pointer;
+}

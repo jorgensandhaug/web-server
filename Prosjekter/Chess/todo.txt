@@ -1,0 +1,4 @@
+finne ut av buggen med bKing, wKing
+draw by repetition
+velge ny brikke med å trykke på den
+

@@ -1,0 +1,361 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href=""> 
+        <title> det som  skal stå på fanen</title>
+        <style>
+            body{
+                margin: 0px;
+            }
+        
+        </style>
+    </head>
+    
+    <body>
+    <canvas width="301" height="301" id="mittCanvas"></canvas>
+    <div id="spiller"></div>
+    <p id="utskrift"></p>
+
+    
+
+    
+    
+    
+        <script>
+    var canvas = document.querySelector("#mittCanvas");
+    var c = canvas.getContext("2d");
+    var gridsize = 100
+    var tall1 = 0
+    var seier = 0
+
+    spiller.innerHTML = "Kryss sin tur"
+    
+    tegnRuter()
+            
+        
+        arr1=[
+            [0,0,0],
+            [0,0,0],
+            [0,0,0]
+            ]
+            
+          
+        
+        
+        
+        
+        
+    window.addEventListener("click", function(event){
+        
+        //gjør at det er umulig å tegne mer når spillet er ferdig
+        if(tall1<9 && seier==0){
+        
+            //tegner i rute 1
+            if (Math.floor(event.clientX/gridsize) === 0 && Math.floor(event.clientY/gridsize) === 0 && arr1[0][0]==0){
+                event.preventDefault()
+                
+                if (tall1%2 == 0) {
+                    tegnKryss(0,0) 
+                    spiller.innerHTML = "Sirkel sin tur"
+                    arr1[0][0]=1
+                }
+                else{
+                    tegnSirkel(1,1)
+                    spiller.innerHTML = "Kryss sin tur"
+                    arr1[0][0]=2
+                }
+                    tall1++
+                
+            }
+        
+            //tegner i rute 2
+            if (Math.floor(event.clientX/gridsize) === 1 && Math.floor(event.clientY/gridsize) === 0 && arr1[0][1]==0){
+                event.preventDefault()
+                
+                if (tall1%2 == 0){
+                    tegnKryss(1,0)
+                    spiller.innerHTML = "Sirkel sin tur"
+                    arr1[0][1]=1
+                }
+                else{
+                    tegnSirkel(3,1)
+                    spiller.innerHTML = "Kryss 1 sin tur"
+                    arr1[0][1]=2
+                }
+                    tall1++
+                    finnVinner()
+            }
+            
+            //tegner i rute 3
+            if (Math.floor(event.clientX/gridsize) === 2 && Math.floor(event.clientY/gridsize) === 0 && arr1[0][2]==0){
+                event.preventDefault()
+                if (tall1%2 == 0){
+                    tegnKryss(2,0)
+                    spiller.innerHTML = "Sirkel sin tur"
+                    arr1[0][2]=1
+                }
+                else{
+                    tegnSirkel(5,1)
+                    spiller.innerHTML = "Kryss sin tur"
+                    arr1[0][2]=2
+                }
+                    tall1++
+                    finnVinner()
+            }
+            
+            //tegner i rute 4
+            if (Math.floor(event.clientX/gridsize) === 0 && Math.floor(event.clientY/gridsize) === 1 && arr1[1][0]==0){
+                event.preventDefault()
+                if(tall1%2==0){
+                    tegnKryss(0,1)
+                    spiller.innerHTML = "Sirkel sin tur"
+                    arr1[1][0]=1
+                }
+                else{
+                    tegnSirkel(1,3)
+                    spiller.innerHTML = "Kryss sin tur"
+                    arr1[1][0]=2
+                }
+                    tall1++
+                    finnVinner()
+            }   
+            
+            //tegner i rute 5
+            if (Math.floor(event.clientX/gridsize) === 1 && Math.floor(event.clientY/gridsize) === 1 && arr1[1][1]==0){
+                event.preventDefault()
+                if(tall1%2==0){
+                    tegnKryss(1,1)
+                    spiller.innerHTML = "Sirkel sin tur"
+                    arr1[1][1]=1
+                }
+                else{
+                    tegnSirkel(3,3)
+                    spiller.innerHTML = "Kryss sin tur"
+                    arr1[1][1]=2
+                }
+                    tall1++
+                    finnVinner()
+            }
+            
+            //tegner i rute 6
+            if (Math.floor(event.clientX/gridsize) === 2 && Math.floor(event.clientY/gridsize) === 1 && arr1[1][2]==0){
+                event.preventDefault()
+                if(tall1%2==0){
+                    tegnKryss(2,1) 
+                    spiller.innerHTML = "Sirkel sin tur"
+                    arr1[1][2]=1
+                }
+                else{
+                    tegnSirkel(5,3)
+                    spiller.innerHTML = "Kryss sin tur"
+                    arr1[1][2]=2
+                }
+                    tall1++
+                    finnVinner()
+            }
+                
+            //tegner i rute 7
+            if (Math.floor(event.clientX/gridsize) === 0 && Math.floor(event.clientY/gridsize) === 2 && arr1[2][0]==0){
+                event.preventDefault()
+                if(tall1%2==0){
+                    tegnKryss(0,2) 
+                    spiller.innerHTML = "Sirkel sin tur"
+                    arr1[2][0]=1
+                }
+                else{   
+                    tegnSirkel(1,5)
+                    spiller.innerHTML = "Kryss sin tur"
+                    arr1[2][0]=2
+                }
+                    tall1++
+                    finnVinner()
+            }
+            
+            //tegner i rute 8
+            if (Math.floor(event.clientX/gridsize) === 1 && Math.floor(event.clientY/gridsize) === 2 && arr1[2][1]==0){
+                event.preventDefault()
+                if(tall1%2==0){
+                    tegnKryss(1,2)  
+                    spiller.innerHTML = "Sirkel sin tur"
+                    arr1[2][1]=1
+                }
+                else{
+                    tegnSirkel(3,5)
+                    spiller.innerHTML = "Kryss sin tur"
+                    arr1[2][1]=2
+                }
+                    tall1++
+                    finnVinner()
+            }
+                
+            //tegner i rute 9
+            if (Math.floor(event.clientX/gridsize) === 2 && Math.floor(event.clientY/gridsize) === 2 && arr1[2][2]==0){
+                event.preventDefault()
+                if(tall1%2==0){
+                    tegnKryss(2,2) 
+                    spiller.innerHTML = "Sirkel sin tur"
+                    arr1[2][2]=1
+                }
+                else{
+                    tegnSirkel(5,5)
+                    spiller.innerHTML = "Kryss sin tur"
+                    arr1[2][2]=2
+                }
+                    tall1++
+                    finnVinner()
+            }
+        
+        }
+        
+        else{
+            spiller.innerHTML = "Spillet er over. Trykk på F5 for å spille på nytt"
+        }
+    }
+);
+            
+       //     finner vinneren
+            
+           function finnVinner(){ 
+               
+               //sjekker den øverste vannrette kolonnen
+                if(arr1[0][0]==1 && arr1[0][1]==1 && arr1[0][2]==1){
+                spiller.innerHTML = "Seier til kryss"
+                    seier++
+                    
+                }
+                else if(arr1[0][0]==2 && arr1[0][1]==2 && arr1[0][2]==2){
+                    spiller.innerHTML = "Seier til sirkel"
+                    seier++
+                }
+               
+               //sjekker den midterste vannrette kolonnen
+               else if(arr1[1][0]==1 && arr1[1][1]==1 && arr1[1][2]==1){
+                   spiller.innerHTML = "Seier til kryss"
+                   seier++
+               }
+               
+               else if(arr1[1][0]==2 && arr1[1][1]==2 && arr1[1][2]==2){
+                   spiller.innerHTML = "Seier til sirkel"
+                   seier++
+               }
+
+               //sjekker den nederste vannrette kolonnen
+               else if(arr1[2][0]==1 && arr1[2][1]==1 && arr1[2][2]==1){
+                   spiller.innerHTML = "Seier til kryss"
+                   seier++
+               }
+               
+               else if(arr1[2][0]==2 && arr1[2][1]==2 && arr1[2][2]==2){
+                   spiller.innerHTML = "Seier til sirkel"
+                   seier++
+               }
+               
+               //sjekker den første loddrette kolonnen
+               else if(arr1[0][0]==1 && arr1[1][0]==1 && arr1[2][0]==1){
+                   spiller.innerHTML = "Seier til kryss"
+                   seier++
+               }
+               else if(arr1[0][0]==2 && arr1[1][0]==2 && arr1[2][0]==2){
+                    spiller.innerHTML = "Seier til sirkel"
+                   seier++
+                }
+               
+               //sjekker den andre loddrette kolonnen
+                else if(arr1[0][1]==1 && arr1[1][1]==1 && arr1[2][1]==1){
+                    spiller.innerHTML = "Seier til kryss"
+                    seier++
+                }
+                else if(arr1[0][1]==2 && arr1[1][1]==2 && arr1[2][1]==2){
+                    spiller.innerHTML = "Seier til sirkel"
+                    seier++
+                }
+               
+               //sjekekr den siste loddrette kolonnen
+               else if(arr1[0][2]==1 && arr1[1][2]==1 && arr1[2][2]==1){
+                   spiller.innerHTML = "Seier til kryss"
+                   seier++
+               }
+               else if(arr1[0][2]==2 && arr1[1][2]==2 && arr1[2][2]==2){
+                   spiller.innerHTML = "Seier til sirkel"
+                   seier++
+               }
+               
+               //sjekker diagonalen fra venstre oppe til høyre nede
+               else if(arr1[0][0]==1 && arr1[1][1]==1 && arr1[2][2]==1){
+                   spiller.innerHTML = "Seier til kryss"
+                   seier++
+               }
+               else if(arr1[0][0]==2 && arr1[1][1]==2 && arr1[2][2]==2){
+                   spiller.innerHTML = "Seier til sirkel"
+                   seier++
+               }
+               
+               //sjekker diagonalen fra venstre nede til høyre oppe
+               else if(arr1[2][0]==1 && arr1[1][1]==1 && arr1[0][2]==1){
+                   spiller.innerHTML = "Seier til kryss"
+                   seier++
+               }
+               else if(arr1[2][0]==2 && arr1[1][1]==2 && arr1[0][2]==2){
+                   spiller.innerHTML = "Seier til sirkel"
+                   seier++
+               }
+
+           }
+            
+            
+            
+            
+            
+            function tegnKryss(x,y){
+                c.beginPath();
+                c.moveTo(0+gridsize*x, 0+gridsize*y)
+                c.lineTo(100+gridsize*x,100+gridsize*y)
+                c.stroke()
+                
+                c.beginPath()
+                c.moveTo(100+gridsize*x,0+gridsize*y)
+                c.lineTo(0+gridsize*x,100+gridsize*y)
+                
+                c.lineWidth=1
+                c.stroke()
+            }
+            
+            //gridsize/2 er sentrum i ruta, oddetall som parameter i sirkel hvertfall
+            
+           function tegnSirkel(x,y){
+               c.beginPath();
+               c.arc(x*gridsize/2, y*gridsize/2, 45, 0, Math.PI*2);
+               c.stroke();
+           } 
+            
+            
+            function tegnRuter(){
+            for(i=0; i<canvas.height/gridsize; i++){
+                c.beginPath();
+                c.moveTo(0, gridsize*i)
+                c.lineTo(canvas.width, gridsize*i)
+                c.stroke()
+            }
+                
+            for(j=0; j<canvas.width/gridsize; j++){
+                c.beginPath()
+                c.moveTo(gridsize*j,0)
+                c.lineTo(gridsize*j,canvas.height)
+                c.stroke()
+            }
+        }
+            
+            
+           
+            
+            
+        
+        
+        </script>
+        
+        
+        
+        
+    </body>
+</html>

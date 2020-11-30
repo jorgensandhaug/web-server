@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+    h1{
+        font-family: monospace;
+        text-align: center;
+        font-weight: 300;
+        font-size: 20px;
+        width: 500px;
+    }
+    body{
+        background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+    }
+    span{
+        margin: 70px;
+        font-family: monospace;
+        font-size: 50px;
+    }
+    #entiltusen{
+        margin: 70px;
+        font-family: monospace;
+        font-size: 50px;
+    }
+    input[type="button"] {
+        display: inline-block;
+        padding: 15px 25px;
+        margin: 20px;
+        font-size: 18px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+    }
+
+    input[type="button"]:hover {background-color: #3e8e41}
+
+    input[type="button"]:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+    </style>
+</head>
+<body>
+    <h1> Welcome to spill, bruk de 6 tallene sammen med de 4 ulike regneoperasjonene(Pluss, Minus, Gange, Dele) til å komme fram til måltallet</h1>
+    <div>
+        <input type="button" value="Kjør spill" id="start">
+    </div>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <div id="entiltusen"></div>
+
+<script>
+const storeTall = [25, 50, 75, 100]    
+const småTall = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const btn = document.getElementById("start")
+const spans = document.querySelectorAll("span")
+const entiltusen = document.getElementById("entiltusen")
+function startGame(){
+    let tempStor = JSON.parse(JSON.stringify(storeTall))
+    let tempLiten = JSON.parse(JSON.stringify(småTall))
+    let tall1 = storeTall[Math.floor(Math.random()*storeTall.length)]
+    tempStor.splice(tempStor.indexOf(tall1), 1)
+    let tall2 = tempStor[Math.floor(Math.random()*tempStor.length)]
+
+
+    let tall3 = tempLiten[Math.floor(Math.random()*tempLiten.length)]
+   tempLiten.splice(tempLiten.indexOf(tall3), 1)
+    let tall4 = tempLiten[Math.floor(Math.random()*tempLiten.length)]
+   tempLiten.splice(tempLiten.indexOf(tall4), 1)
+    let tall5 = tempLiten[Math.floor(Math.random()*tempLiten.length)]
+   tempLiten.splice(tempLiten.indexOf(tall5), 1)
+    let tall6 = tempLiten[Math.floor(Math.random()*tempLiten.length)]
+
+    spans[0].innerHTML = tall1
+    spans[1].innerHTML = tall2
+    spans[2].innerHTML = tall3
+    spans[3].innerHTML = tall4
+    spans[4].innerHTML = tall5
+    spans[5].innerHTML = tall6
+    entiltusen.innerHTML = `Måltall: ${Math.floor(Math.random()*899)+100}`
+
+}
+btn.addEventListener("click", startGame)
+</script>
+    
+</body>
+</html>
