@@ -24,7 +24,7 @@ const routes = [
     ];
 
 routes.forEach( tup =>{
-    const site, name, path = tup;
+    const [site, name, path] = tup;
     app.get("/"+site+"/"+name+"/"+path, (req, res) =>{
         res.sendFile("index.html", {root: "/home/sandhaug/"+site+"/"+path+"/"});
     })
