@@ -3,11 +3,11 @@ const app = express()
 const server = require("http").Server(app)
 
 app.get("/jorgen", (req, res) =>{
-    res.sendFile("index.html", {root: "jorge"});
+    res.sendFile("home/sandhaug/jorge/nettside-jorge/index.html");
 })
 
 app.get("/simen", (req, res) =>{
-    res.sendFile("index.html", {root: "simen"});
+    res.sendFile("home/sandhaug/simen/nettside/index.html");
 })
 
 app.get("/", (req, res) =>{
