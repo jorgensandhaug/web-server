@@ -15,6 +15,7 @@ app.get("/", (req, res) =>{
 })
 
 
+
 const routes = [
     ["jorge", "sound_visualizer", "nettside-jorgen/Prosjekter/SoundVisualizer"],
     ["jorge", "tetris", "nettside-jorgen/Prosjekter/Tetris"],
@@ -27,8 +28,8 @@ routes.forEach( tup =>{
     const site = tup[0];
     const name = tup[1];
     const path = tup[2];
-    
-    app.get("/"+site+"/"+name+"/"+path, (req, res) =>{
+
+    app.get("/"+site+"/"+name, (req, res) =>{
         res.sendFile("index.html", {root: "/home/sandhaug/"+site+"/"+path+"/"});
     })
 })
