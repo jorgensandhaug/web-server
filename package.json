@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/jorgensandhaug/web-server#readme",
   "dependencies": {
+    "diet": "^0.16.0",
     "express": "^4.17.1"
   }
 }
