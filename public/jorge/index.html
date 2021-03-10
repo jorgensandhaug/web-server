@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Prosjekter/Ballkræsj/style.css">
+    <script src="Prosjekter/Ballkræsj/app.js" defer></script>
+    <meta charset="utf-8">
+    <title>Nettside</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="box">Prosjekter</div>
+      </div>
+      <div class="prosjektGrid">
+        <!--
+           <div class="box"><a href="Prosjekter/Terraria/terraria.html"><span>Terraria</span></a></div>
+        
+    
+        <div class="box"><a href="tank"><span>Tank</span></a></div>
+        <div class="box"><a href="Prosjekter/Chess/chess.html"><span>Sjakk II</span></a></div>
+      
+        <div class="box"><a href="https://snake-multiplayer-hs.herokuapp.com/"><span>Snake Multiplayer</span></a></div>
+        <div class="box"><a href="Prosjekter/SnakeSP/index.html"><span>Snake</span></a></div>
+        <div class="box"><a href="Prosjekter/Pong/index.html"><span>Pong</span></a></div>
+        <div class="box"><a href="Mario-spill/index.html"><span>Mariospill</span></a></div>
+        <div class="box"><a href="Prosjekter/Hangman/stabil/indeks.html"><span>Hangman</span></a></div>
+        <div class="box"><a href="Sjakk/sjakk.html"><span>Sjakk</span></a></div>
+        <div class="box"><a href="Prosjekter/flappyBird/index.html"><span>Flappy Bird</span></a></div>
+        <div class="box"><a href="Prosjekter/Pokemonspill/indeks.html"><span>Pokemonspill</span></a></div>
+        <div class="box"><a href="Prosjekter/Monty/Kuleting/MontyHall.html"><span>Monty Hall</span></a></div>
+        <div class="box"><a href="Prosjekter/ticTacToe/ticTacToe.html"><span>Tic tac toe</span></a></div>
+        <div class="box"><a href="Prosjekter/disco/index.html"><span>Disco</span></a></div>
+        <div class="box"><a href="circular_motion"><span>Sirkelopplegg</span></a></div>
+        {% comment %} <div class="box"><a href="Prosjekter/Ballspill/ballspill.html"><span>Ballspill</span></a></div> {% endcomment %}
+        <div class="box"><a href="Prosjekter/Media/quiz.html"><span>Dyrequiz</span></a></div>
+        {% comment %} <div class="box"><a href="Prosjekter/Platformer/index.html"><span>TileSpill</span></a></div> {% endcomment %} 
+        <div class="box"><a href="draw"><span>Tegneprogram</span></a></div>
+        <div class="box"><a href="Prosjekter/Ordsorterer/index.html"><span>Sorter</span></a></div> 
+        <div class="box"><a href="Prosjekter/Mattespill/simenspill.html"><span>Mattespill</span></a></div> 
+        <div class="box"><a href="Prosjekter/SDH/velkommen.html"><span>Skoleprosjekt Religion</span></a></div>
+
+        <div class="box"><a href="https://discord.com/api/oauth2/authorize?client_id=701432273937104936&permissions=37014784&scope=bot"><span>Discord Music Bot</span></a></div> -->
+
+
+      </div>
+  </div>
+  <canvas id="canvas"></canvas>
+  <script>
+    const div = document.querySelector(".prosjektGrid");
+    const links = [
+    ["Terraria", "http://79.160.125.77:3000/game/"], 
+    ["World Creator", "http://79.160.125.77:3000/world/"], 
+    ["Sound Visualizer", "Prosjekter/SoundVisualizer/index.html"],
+    ["Tetris", "Prosjekter/Tetris/index.html"],
+    ["Tank", "Prosjekter/Tank, A Fullfilling Gaming Experience/index.html"],
+    ["Tegneprogram", "Prosjekter/Drawing/index.html"],
+    ["Discord Music Bot", "https://discord.com/api/oauth2/authorize?client_id=701432273937104936&permissions=37014784&scope=bot"],
+    ["Platformer", "Prosjekter/Platformer/index.html"]
+    ];
+
+    links.forEach( tup =>{
+      const name = tup[0];
+      const link = tup[1];
+      div.innerHTML += '<div class="box"><a href='+link+'><span>'+name+'</span></a></div>';
+    })
+  </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Example.com</title>
+        <style>
+            body{
+                background-color: beige;
+            }
+            #clock{
+                font-size: 40px;
+            }
+            #hvit{
+                background-color: white;
+                color: black;
+                position: absolute;
+                top: 647px;
+                left: 8px;
+                width: 312px;
+                border: solid 5px gray;
+                text-align: center;
+            }
+            #svart{
+                background-color: black;
+                color: white;
+                position: absolute;
+                top: 647px;
+                left: 325px;
+                width: 314px;
+                border: solid 5px gray;
+                text-align: center;
+            }
+            #result{
+                font-size: 40px;
+                position: absolute;
+                top: 700px;
+                left: 8px;
+                width: 631px;
+                border: solid 5px gray;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- <div class="canvas_div"> -->
+        <canvas></canvas>
+        <div id="clock"><span id="hvit">Hvit: 60</span><span id="svart">Svart: 60</span></div>
+        <div id="result"></div>
+        <script src="app.js"></script>
+    </body>
+</html>

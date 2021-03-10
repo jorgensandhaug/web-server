@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Snake</title>
+    <style>
+      div {
+        background-color: aliceblue;
+        text-align: center;
+        order: 2;
+        width: 200px;
+      }
+
+      button {
+        order: 3;
+        height: 100px;
+        align-self: center;
+      }
+
+      /* h2 {
+      width: 100%;
+      text-align: center;
+    } */
+
+      body {
+        display: flex;
+      }
+
+      body > canvas {
+        order: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <button>Reset</button> -->
+    <!-- <h2>HIGHSCORES</h2> -->
+    <div class="scoreP"></div>
+    <!-- <table id="scoreboard">
+      <tr>
+          <th>Name</th>
+          <th>Score</th>
+      </tr>
+  </table> -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

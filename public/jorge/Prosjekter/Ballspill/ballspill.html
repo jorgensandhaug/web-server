@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Baller og krefter</title>
+    </head>
+<canvas></canvas>
+<script>
+
+const canvas = document.querySelector("canvas");
+const c = canvas.getContext("2d");
+canvas.width = window.innerWidth-20;
+canvas.height = window.innerHeight-20;
+
+const gravity = 0.1;
+
+let score = 0;
+
+window.addEventListener("resize", function(){
+    canvas.width = window.innerWidth-20;
+canvas.height = window.innerHeight-20;
+})
+
+class Ball{
+    constructor(x, y, dx, dy, r, color, bool){
+        this.pos = { x: x, y: y }
+        this.vel = { x: dx, y: dy }
+        this.acc = { x: 0, y: 0 }
+        if(bool){ this.acc.y = gravity}
+        this.color = color;
+        this.r = r;
+        this.mass = this.r*10
+        this.count = 0;
+    }
+    
+
+    draw(){
+        c.beginPath();
+        c.fillStyle = this.color;
+        c.arc(this.pos.x, this.pos.y, this.r, 0, 2*Math.PI);
+        c.fill();
+    }
+    
+    update(){
+        this.pos.x+=this.vel.x;
+        this.pos.y+=this.vel.y;
+        this.vel.x+=this.acc.x;
+        this.vel.y+=this.acc.y;
+
+        this.vel.x *= 0.99
+        this.vel.y *= 0.99
+
+        // applyForce({x:0, y: this.mass * 0.3}, this)
+        //bakken
+        if(this.pos.y + this.r > canvas.height){
+            this.vel.y *= -0.8
+            this.pos.y = canvas.height - this.r;
+            this.vel.x *= 0.9
+            this.count++;
+        }
+        //taket
+        else if(this.pos.y < this.r){
+            this.vel.y *= -0.8;
+            this.pos.y = this.r;
+        }
+        if(this.pos.x < this.r){
+            this.vel.x = -this.vel.x// * 0.5;
+            this.pos.x = this.r;
+        }
+        else if(this.pos.x + this.r > canvas.width){
+            this.vel.x = -this.vel.x// * 0.5;
+            this.pos.x = canvas.width - this.r;
+        }
+        if(this.count > 15){
+            this.acc.y = 0;
+            this.vel.y = 0;
+            this.pos.y = canvas.height - this.r;
+        }
+
+        this.draw()
+    }
+}
+
+let particleArr = []
+
+
+class Enemy{
+    constructor(x, y, r, c){
+        this.x = x;
+        this.y = y;
+        this.r = r;
+        this.c = c;
+    }
+
+    draw(){
+        c.beginPath();
+        c.fillStyle = this.c;
+        c.arc(this.x, this.y, this.r, 0, 2*Math.PI);
+        c.fill();
+    }
+
+    explode(){
+    
+        let antallParticles = 80;
+        for(let j = 0; j < antallParticles; j++){
+            let pos = {x: this.x + Math.cos(randomInt(0, 2*Math.PI)) * randomInt(1, 10),
+             y: this.y + Math.sin(randomInt(0, 2*Math.PI)) * randomInt(1, 10)}
+            let vel = {x: Math.cos(Math.atan2(pos.x-this.x, pos.y-this.y)),
+            y: Math.sin(Math.atan2(pos.x-this.x, pos.y-this.y))}
+            let rad = randomInt(1, 2)
+
+            particleArr.push(new Ball(pos.x, pos.y, vel.x, vel.y, rad, this.c))
+        }
+        setTimeout(function(){
+            particleArr.splice(0, antallParticles);
+        }, 2000)
+    }
+}
+
+let colorArr =  ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
+		  '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
+		  '#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A', 
+		  '#FF99E6', '#CCFF1A', '#FF1A66', '#E6331A', '#33FFCC',
+		  '#66994D', '#B366CC', '#4D8000', '#B33300', '#CC80CC', 
+		  '#66664D', '#991AFF', '#E666FF', '#4DB3FF', '#1AB399',
+		  '#E666B3', '#33991A', '#CC9999', '#B3B31A', '#00E680', 
+		  '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933',
+		  '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3', 
+          '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
+          
+let randomInt = (fra, til) => Math.random()*(til-fra) + fra
+let distance = (x1, y1, x2, y2) => Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2))
+
+let eArr = [];
+function createMap(){
+    eArr = []
+for(let i = 0; i < 100; i++){
+    let radius = randomInt(8, 14);
+    let xPos = randomInt(radius, canvas.width-radius);
+    let yPos = randomInt(radius, canvas.height-radius);
+    let col = colorArr[Math.floor(randomInt(0, colorArr.length))];
+
+    eArr.push(new Enemy(xPos, yPos, radius, col))
+    }
+}
+createMap()
+let player = new Ball(100, 400, 0, 0, 10, "black", true);
+
+let mouseX, mouseY;
+let deltaX, deltaY, down;
+
+
+
+
+
+function background(){
+    c.fillStyle = "white"
+    c.fillRect(0, 0, canvas.width, canvas.height);
+}
+
+function loop(){
+   background()
+
+    player.update()
+
+
+        if(down){
+            c.beginPath();
+        c.lineWidth = 5;
+        c.strokeStyle = "red"
+        c.moveTo(player.pos.x, player.pos.y);
+        c.lineTo(mouseX, mouseY);
+        c.stroke();
+        }
+
+for(let i = 0; i < eArr.length; i++){
+    eArr[i].draw();
+
+    if(distance(player.pos.x, player.pos.y, eArr[i].x, eArr[i].y) < player.r + eArr[i].r){
+        eArr[i].explode()
+       eArr.splice(i, 1);
+       score ++;
+    }
+}
+for(let k = 0; k < particleArr.length; k++){
+    particleArr[k].update()
+}        
+
+    c.font = "40px Arial";
+    c.fillStyle = "black"
+    c.fillText(score, 20, 40)
+
+    if(score == 50){ createMap(); score = 0}
+    requestAnimationFrame(loop)
+}
+loop()
+
+
+
+
+
+
+function applyForce(forceSum, object, time){
+    object.acc.x = forceSum.x / (object.mass*10); 
+    object.acc.y = forceSum.y / (object.mass*10) + gravity;
+
+    setTimeout(function(){
+        object.acc.x = 0;
+        object.acc.y = gravity;
+    }, time)
+}
+
+function removeForce(object){
+    object.acc.x = 0;
+    object.acc.y = 0;
+}
+
+window.addEventListener("mousedown", mouse)
+window.addEventListener("mouseup", mouse)
+window.addEventListener("mousemove", mouse)
+
+
+function mouse(e){
+    if(e.type == "mousedown"){  
+    down = true;
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+        
+    
+
+      }  else if(e.type == "mousemove" && down){  
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+}  else if(e.type == "mouseup"){
+    down = false;
+    deltaX = e.clientX - player.pos.x;
+    deltaY = e.clientY - player.pos.y;
+    applyForce({x: deltaX*10, y: deltaY*10}, player, 50);
+
+    // player.color = colorArr[Math.floor(randomInt(0, colorArr.length))];
+
+    player.count = 0;
+}
+}
+
+function rotate(vel, angle) {
+    const rotatedVelocities = {
+        x: vel.x * Math.cos(angle) - vel.y * Math.sin(angle),
+        y: vel.x * Math.sin(angle) + vel.y * Math.cos(angle)
+    };
+
+    return rotatedVelocities;
+}
+
+
+
+
+</script>
+</body>
+</html>

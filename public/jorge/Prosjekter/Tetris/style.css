@@ -1,0 +1,156 @@
+      body{
+        text-align: center;
+        /* height: 100%; */
+        /* overflow: hidden; */
+        /* width: 100%; */
+        /* position: fixed; */
+        position: relative;
+        margin: 0;
+      }
+      /* *::selection{
+        color: none;
+        background: none;
+      } */
+      /* *{
+        touch-action: manipulation;
+      } */
+
+      #div{
+        font-family: monospace, sans-serif;
+        text-align: left;
+        color: black;
+        font-size: 20px;
+        /* font-size: 1.4vw; */
+        position: absolute;
+        top: 35vh;
+        left: 80vw;
+        display: none;
+      }
+
+      #top-left{
+        position: absolute;
+        top:20px;
+        left:20px;
+        font-family: monospace;
+        font-size: 15px;
+      }
+
+      #login {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgb(207, 207, 207);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      #login-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      #login-text {
+        margin-bottom: 10px;
+      }
+
+      #scoreBoardDiv {
+        font-family: monospace, sans-serif;
+        position: absolute;
+        top:80px;
+        left:80px;
+        width: 200px;
+        background: orange;
+        height: 80%;
+        display: none;
+        overflow: scroll
+      }
+
+      #scoreBoard {
+        color: rgb(32, 32, 32);
+        position: relative;
+      }
+
+      #scoreBoard td {
+        padding: 10px;
+      }
+
+      #scoreBoardOverskrift {
+        font-size: 20px;
+        position: fixed;
+        left: 50%;
+      }
+
+      .errors {
+        color: red;
+        display: none;
+      }
+
+      .new_post {
+        background: #805b5b;
+        height: 160px;
+        width: 200px;
+        border-radius: 4px;
+        color: #222;
+        padding: 10px;
+        position: absolute;
+        left: 1200px;
+        top: 100px;
+      }
+
+      .new_post:hover {
+        animation: bounce 0.5s linear;
+      }
+
+      @keyframes bounce {
+        20% {
+          transform: translateY(-6px);
+        }
+        40% {
+          transform: translateY(0px);
+        }
+
+        80% {
+          transform: translateY(-2px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      .form_new_post {
+        display: grid;
+      }
+
+
+
+    .form_new_post textarea {
+      resize: none;
+    }
+
+    .form_new_post input {
+      border: none;
+      margin-top: 5px;
+      padding: 5px;
+      border-radius: 5px;
+      background: rgb(209, 209, 208);
+      transition: all 0.1s;
+    }
+
+    .form_new_post input:hover {
+      transform: translateY(1px);
+      cursor: pointer;
+      background: rgb(197, 197, 197);
+    }
+
+    .tilbakemelding {
+        color: white;
+    }
+

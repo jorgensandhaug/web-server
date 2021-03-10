@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>nykodet</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+  <div id="spillSlutt">
+    <div id="splillSluttMelding"></div>
+    <!-- <div id="dinScore">Din poengsum er: </div> -->
+    <!-- id="påNytt under for score-system" -->
+    <button type="button" onClick="window.location.reload();">Spill igjen!</button>
+  </div>
+
+
+  <div id="kategoriDiv">
+    <div>
+      <h1>Velg kategori:</h1>
+      <button type="button" id="musikk">Musikk</button>
+      <button type="button" id="spill">Spill</button>
+      <button type="button" id="sport">Sport</button>
+      <button type="button" id="artist">Artister</button>
+      <button type="button" id="blandet">Godt og blandet</button>
+    </div>
+  </div>
+  <div id="vanskelighetsDiv">
+    <div>
+      <h1>Velg vanskelighetsgrad:</h1>
+      <button type="button" id="lett">Lett</button>
+      <button type="button" id="middels">Middels</button>
+      <button type="button" id="vanskelig">Vanskelig</button>
+    </div>
+  </div>
+
+  <div id="innpakning">
+
+    <h1> Hangman </h1>
+    <h2 id="kath2"></h2>
+
+    <p id="ordLengde"></p>
+    <p id="feilBokstav">Ordet inneholder ikke: </p>
+
+    <canvas width="600" height="400" id="mittcanvas"></canvas>
+
+    <p id="mottaBokstav">
+      <form class="form"></form>
+      <input type="text" id="input" placeholder="Skriv inn her" required>
+      <input type="submit" value="TEST BOKSTAV">
+    </p>
+  </div>
+
+
+
+
+
+
+  <script src="nykodet.js"></script>
+</body>
+
+</html>

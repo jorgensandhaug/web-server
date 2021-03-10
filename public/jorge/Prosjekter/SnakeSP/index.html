@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="snake.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <img id="hode" style="display: none;"src="assets/hode_rett.png">
+    <img id="hale_rett" style="display: none;"src="assets/hale_rett.png">
+    <img id="hale_vri" style="display: none;"src="assets/hale_vri.png">
+    <img id="hale_slutt" style="display: none;"src="assets/hale_slutt.png">
+    <img id="eple" style="display: none;"src="assets/eple.png">
+    <canvas></canvas>
+        <div class="score">
+            <div class="help-tip"><p>Beveg deg rundt med piltastene, og samle epler for å bli lengre. Om du spiser halen din taper du.</p></div>
+            <img id="ape" style="display: block;"src="assets/ape_lang.png">
+            <div class="scorediv">
+                <div class="poengsum_nå">Din poengsum: 0</div>    
+                <h4>Tidligere poengsummer</h4>
+                    <div class="table">
+                        <table>
+                        <tr>
+                            <th>Dato</th>
+                            <th>Poengsum</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

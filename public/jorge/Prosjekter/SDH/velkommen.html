@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=PT+Serif&display=swap');
+    *{
+        font-family: 'PT Serif', serif;
+    }
+    body{
+        text-align: center;
+    }
+    #meny{
+        font-size: 20px;
+        display: flex;
+        justify-content: space-evenly;
+        background-color: beige;
+        border-radius: 4px;
+        margin: 0 10vw 0 10vw;
+    }
+    
+    #content{
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        margin: 0 10vw 0 0;
+    }
+
+    #text{
+        font-size: 14px;
+        line-height: 200%;
+        margin: 100px 0 100px 10vw;
+        width: 50%;
+        text-align: left;
+    }
+    
+
+    #storbokstav::first-letter{
+        font-size: 4em;
+        font-weight: 700;
+        font-family: serif;
+    }
+    #storbokstav{
+        font-size: 20px;
+    }
+    #p{
+        cursor:pointer;
+    }
+    img{
+        width: 30vw;
+        margin-left: 50px;
+        margin-top: 150px;
+        margin-bottom: 250px;
+    }
+
+    img[id="mindre"]{
+        width: 15vw;
+        margin-bottom: 0px;
+        margin-top: 70px;
+    }
+
+    img[src="latterday.png"]{
+        margin: 0;
+        width: 20%;
+    }
+    #bilder{
+        padding: 0;
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    </style>
+</head>
+<body>
+
+    <!-- <h1 id="overskrift">JESU KRISTI KIRKE AV SISTE DAGERS HELLIGE</h1> -->
+    <img src="latterday.png" id="p">
+    <div id="meny">
+        <p id="p">Særtrekk</p>
+        <p id="p">Den rituelle dimensjon</p>
+        <p id="p">Den estetiske dimensjon</p>
+        <p id="p">Kjønnsroller</p>
+        <p id="p">Syn på andre religioner</p>
+    </div>
+    <div id="content">
+        <div id="text"></div>
+        <div id="bilder"></div>
+    </div>
+    
+    <script>
+        let textEl = document.getElementById("text")
+        let bilderEl = document.getElementById("bilder")
+        let elems = document.querySelectorAll("div[id='meny'] p")
+        let logo = document.querySelector("img[src='latterday.png']")
+
+
+        //særtrekk
+        elems[0].addEventListener("click", ()=>{
+            textEl.innerHTML = særtrekkText
+            bilderEl.innerHTML = '<img src="mormonsbok.jpg"><img src="joseph.jpg"><img src="estetikk4.png"><img src="russel.jpg">'
+        })
+        //rituelle dimensjon
+        elems[1].addEventListener("click", ()=>{
+            textEl.innerHTML = rituelle
+            bilderEl.innerHTML = "<img src='basseng.png'><img src='dåp.jpg'><img src='tempel.jpg'>"
+        })
+        //estetiske dimensjon
+        elems[2].addEventListener("click", ()=>{
+            textEl.innerHTML = estetiske
+            bilderEl.innerHTML = "<img src='estetikk1.png'id='mindre'><img src='estetikk2.png'id='mindre'><img src='estetikk3.png'id='mindre'><img src='estetikk4.png'id='mindre'>"
+        })
+        //kjønssroller
+        elems[3].addEventListener("click", ()=>{
+            textEl.innerHTML = kjonnsroller
+            bilderEl.innerHTML = ""
+        })
+        //syn på andre religioner
+        elems[4].addEventListener("click", ()=>{
+            textEl.innerHTML = andrerel
+            bilderEl.innerHTML = ""
+        })
+        function forside(){
+            textEl.innerHTML = velkommen+sondag
+            bilderEl.innerHTML = "<img src='forside.png'><img src='salen.png'>"
+        }
+        logo.addEventListener("click", forside)
+        
+        let velkommen = `
+        <p id="storbokstav">Velkommen til denne informasjonssiden om Jesu Kristi Kirke av Siste Dagers Hellige. Artiklene du kan lese her er basert på intervjuer med biskop Kjetil Pedersen og Cecilie Lundgren fra den lokale menigheten i Fredrikstad, samt kirkens egen hjemmeside og andre eksterne kilder. For å navigere nettsiden kan du velge mellom forskjellige artikler på toppen av siden. Alt materiell er produsert av Jørgen Sandhaug, Brage Minge, Ola Dahl og Halvor Linder. </p>`
+        
+        let kjonnsroller = `
+        <h1>Kjønnsroller og familie</h1>
+<br>
+
+I Jesu Kristi Kirke av Siste dagers Hellige står familien svært sentralt, og i vårt møte med dem sendte de med oss en formulering av kirkens syn på hvordan en familie skulle se ut. Dette dokumentet er introduksjonen til en offisiell veiledning publisert av kirken i 1995 og heter "Familien - En erklæring til verden". På spørsmålet om hvem som kan vies i menigheten står det skrevet "«Vi, Det første presidentskap og De tolv apostlers råd i Jesu Kristi Kirke av Siste Dagers Hellige, erklærer høytidelig at ekteskap mellom mann og kvinne er innstiftet av Gud, og at familien står sentralt i Skaperens plan for hans barns evige fremtid.". Dette vil si at De Siste Dagers Hellige mener at ekteskapet utelukkende er forbeholdt mann og kvinne, samtidig som viktigheten av en slik familie blir understreket. I intervjuet vårt med Kjetil, biskopen i den lokale menigheten, fikk vi det samme inntrykket. Homofile kunne ikke vies og utøvende homofile kunne ikke være medlem av menigheten. Samtidig ble det ettertrykkelig understreket at respekt for homofile, og personer de var uenige med på andre områder, var en svært viktig verdi i menigheten deres. Selv om homofile ikke kan være medlemmer av menigheten, er de likevel ikke utestengt fra den. Vi var for eksempel hjertelig velkomne til å delta på alle deler av gudstjenesten, selv om vi ikke var medlemmer av menigheten. 
+<br><br>
+Dersom en sammenligner dette med Den Norske Kirke er det én tydelig ulikhet. Siden 2016 har det vært lovlig for homofile å vie seg i Den Norske Kirke. Det er derimot ikke slik at alle som er involverte i kirken er enige i dette, og det finnes definitivt mer konservative stemmer også i Den Norske Kirke. 
+
+<br><br>
+Når det kommer til kjønnsroller er det ingen ekstreme forskjeller mellom mann og kvinne i Jesu Kristi Kirke av Siste Dagers Hellige. De mener derimot at det finnes enkelte oppgaver kjønnene må forholde seg til og understreker også det finnes tydelig inndelte kjønn i erklæringen nevnt ovenfor "Kjønn er en grunnleggende del av enkeltmenneskets førjordiske, jordiske og evige identitet og hensikt". Dette impliserer at kirken i utgangspunktet er imot de nye progressive ideene om kjønn. 
+
+<br><br>
+
+Én av hovedforskjellene mellom mann og kvinne ligger i at kvinner ikke kan motta prestemyndighet. Det vil si at kvinnene har én ordinans mindre enn mennene. Kvinnene har derimot andre viktige oppgaver i menigheten, som for eksempel undervisning på søndagsskole og arbeid med ungdommer. Disse var blant noen av oppgavene Cecilie, som vi snakket med, hadde i menigheten. I "Familien - En erklæring til verden" blir kvinnenes rolle i familien også nevnt. "Etter guddommelig forordning skal fedre presidere over sin familie i kjærlighet og rettferdighet, og de er ansvarlige for å sørge for livets nødvendigheter og beskyttelse for sin familie. En mor er først og fremst ansvarlig for å ha omsorg for sine barn. I disse hellige ansvarsoppgaver er fedre og mødre forpliktet til å hjelpe hverandre som likeverdige partnere. Uførhet, død eller andre forhold kan nødvendiggjøre individuell tilpasning." Kjønnsrollene som beskrevet her er relativt konservative, på den måte at fedrene skal forsørge familien, mens mødre først og fremst skal oppdra familiens barn. På den annen side står det at fedre og mødre skal hjelpe hverandre med disse oppgavene som likeverdige partnere, noe som viser en egalitær holdning. 
+<br>
+
+Dette inntrykket fikk vi også gjennom dialog med Cecilie, og hun uttalte i denne sammenheng følgende: "Vi er så likestilte som vi kan bli." Og begrunner dette med at ulike oppgaver ikke nødvendigvis betyr mangel på likestilling. Menn har noen oppgaver, mens kvinner har andre. Kvinner har for eksempel muligheten til å bli gravide og til å få barn. I tillegg presiserer hun at kvinner kan ha lederroller i kirken når det kommer til for eksempel undervisning og arbeid med ungdom, og mener at disse oppgavene kan anses som like verdifulle som oppgaven med å være prest eller biskop.
+<br><br>
+
+Hovedforskjellen mellom Den Norske Kirke og Jesu Kristi Kirke av Siste Dagers Hellige på dette området ligger i at kvinner kan bli både prester og biskoper i Den Norske Kirke. Det ble tillatt for kvinner å være prester i 1956, mens den første biskopen ble utnevnt i 1993. Utover dette er kjønnsrollene i de to konfesjonene relativt sammenfallende.
+<br><br>
+
+<h3>Kilder:</h3>
+	- <a href="https://www.churchofjesuschrist.org/bc/content/shared/content/norwegian/pdf/language-materials/31180_nor.pdf?lang=nor">Familien</a><br>
+	- <a href="https://snl.no/prest">Prest</a><br>
+- <a href="https://kirken.no/nb-NO/om-kirken/diakoni-og-samfunnsansvar/homofile-kirken/">Homofile i kirken</a>`
+
+
+        let andrerel = `
+        <h1>Syn på andre religioner og livssyn</h1>
+
+<br>
+De siste dagers hellige er veldig opptatt av handlefrihet. For dem betyr dette at man er fri til å handle som man vil, ingen kan fortelle deg hva du skal gjøre, bare hva du bør gjøre. De er ikke der for å dømme noen basert på valgene du tar, dette er opp til himmelske Far. Dersom man har gjort noe man ikke burde kan man snakke om det til en av lederne i Jesu Kristi Kirke av Siste Dagers Hellige for å snakke om det med noen, og vise at man skjønner alvoret i saken. Dette kan sammenlignes med skriftemål i den katolske kirke, men skjer ikke under like formelle omstendigheter. 
+<br><br>
+ 
+Dette med handlefrihet betyr at de heller ikke går ut og kritiserer andre religioner og mener at de tar feil og at det er de selv som har riktig. Dette ville vært veldig hyklersk ifølge Kjetil, fordi man kan ikke forvente at folk viser respekt, dersom man ikke utøver gjensidig respekt. De mener derfor at det er de som har den riktige troen, hvis ikke hadde de ikke trodd eller misjonert, men de går ikke aktivt ut og kaller andres tro for feil. 
+ <br><br>
+
+De siste dagers hellige har ingen trosbekjennelse. Kjetil sa at:
+«Vi må følge de grunnleggende prinsippene til Jesus Kristus. Tro på han, omvende oss, bli døpt og motta den hellige ånds gave». Dette, og et personlig forhold til Jesus Kristus er grunnmuren for en kristen tro i De siste dagers helliges øyne. 
+<br>
+Dette vil si at man ikke nødvendigvis trenger å anerkjenne mormons bok som sann, for å komme til himmelen, men har man et personlig forhold til Jesus Kristus og er medlem av Jesu Kristi Kirke av Siste Dagers Hellige tror man antageligvis på den.  Dette er en kontroversiell holdning til egen tro, men det var faktisk Kjetil selv som tok opp temaet og snakket om "Hva om Joseph Smith bare fant på alt sammen?"
+ <br><br>
+
+I den norske kirke er det satt i gang et omfattende økumenisk arbeid, men de samarbeider ikke med Jesu Kristi Kirke av Siste Dagers Hellige. I det økumeniske arbeidet er det stort fokus på at samarbeidet og forståelsen mellom de ulike kirkesamfunnene skal bli så god som mulig. 
+<br><br>
+
+<h3>Kilder:</h3>
+	- <a href="https://kirken.no/globalassets/kirken.no/om-kirken/slik-styres-kirken/kirkeradet/2015/desember/kr_6_0_15_religionsmoete_dialog.pdf">Kirken.no</a><br>
+- <a href="https://polopoly.prod.mm.cloud.atex.com/preview/2.599/2.632/1.46041">Vårt Land</a>`
+
+
+        let estetiske = `<h1>DEN ESTETISKE DIMENSJONEN</h1>
+ <br><br>
+<h2>Bilder og ornamenter</h2>
+På generell basis har ikke Jesu Kristi Kirke av Siste Dagers Hellige noen vegring for religiøs kunst i form av bilder eller andre ornamenter. I Fredrikstad Menighet var det flere bilder av Jesus, engler og bibelske hendelser hengende rundt i gangene. På biskopens kontor var det også statuer av Jesus, og et bilde av kirkens øverste leder. Jesus er klart og tydelig hovedfokus i Jesu Kristi Kirke av Siste Dagers Hellige, og det vises blant annet ved at kunsten i hovedsak avbilder han eller omhandler han. Det er også en av grunnene til at de siste dagers hellige misliker betegnelsen «mormonere», siden de føler at dette stigmatiserer de i forhold til andre kristne trossamfunn. Derfor har de valgt å ha Jesu navn i tittelen på kirken deres, slik at det kommer frem at han er i fokus for dem.
+<br><br>
+I selve kirkerommet, der gudstjenesten tok sted, var det mer enkelt og nakent. Dette står i kontrast med den norske kirke, der kirkesalene ofte er veldig store, hvor det er høyt under taket, og rikt med utsmykninger. Kjetil sa at dette var fordi de ikke ønsket å trekke oppmerksomheten vekk fra det som var viktigst – nattverden, og resten av seansen. Slik er det også i de mange templene de har verden rundt. Selve kapellet er relativt nakent, for å tillate de besøkende å få ro til sinns, slik at de kan ha en mer åndelig opplevelse. Resten av templene er fint utsmykket, gjerne med bilder og veggmalerier av Jesus Kristus og av Jesu liv. 
+<br><br>
+Når det kommer til hvordan medlemmene er kledd, i forhold til den norske kirke, er det en del forskjeller. Det relativt liten diskrepans mellom medlemmer på et søndagsbesøk i den norske kirke og i Jesu Kristi Kirke av Siste Dagers Hellige. Man er gjerne litt mer anstendig kledd i et søndagsmøte hos SDH – selve seremonien og nattverden regnes kanskje som litt mer ærbødig enn i den norske kirke. Prestene og biskopene i SDH er som sagt tidligere vanlige, ordinerte medlemmer av menighetene, og går (hvertfall i menigheten vi besøkte) like pent kledd som de andre medlemmene. Dette står i kontrast med den norske kirkes mer tradisjonelle prestebekledning, med liturgiske plagg som albaen og stolaen. 
+  <br><br>
+<h3>Kilder:</h3>
+- <a href="https://kirken.no/nb-NO/om-kirken/">Kirken</a><br>
+`
+
+
+
+        let rituelle = `
+        <h1>DEN RITUELLE DIMENSJON</h1>
+ <br>
+ 
+<h2>De Frelsende Ordinansene</h2>
+
+Der man i den norske kirke har sakramenter og andre kirkelige handlinger, har de I Jesu Kristi Kirke av Siste Dagers Hellige (ofte forkortet til SDH) ordinanser. Ordinanser er hellige handlinger av prestedømmet, som utføres av personer som har blitt ordinert med prestedomsmakt. Dette innebefatter barnevelsignelse, dåp, nattverd, overføring av prestedømmet, mottak av vår egen begavelse og besegling i tempelet. Sentralt for disse er de siste dagers helliges fokus på å utføre de hellige ordinansene slik de ble utført i bibelen, og av Jesus selv. 
+ <br><br>
+Den norske kirke har kun to sakramenter, dåp og nattverd, men praktiserer andre kirkelige handlinger som regnes som sakramenter i andre trosretninger, som konfirmasjon, vielse, presteordinasjon og begravelse. I Jesu Kristi Kirke av Siste Dagers Hellige sier man at det i hovedsak er fem frelsende ordinanser som menn burde motta i løpet av livet: 
+ <br><br>
+Dåp er den første, frelsende ordinans. De Siste Dagers Hellige praktiserer ikke barnedåp, slik man gjør i den norske kirke. De tror at siden barnet ikke har bevisst valgt selv å bli frelst, er ikke handlingen frelsende. De praktiserer da heller en barnevelsignelse, hvor man velsigner det nyfødte barnet, i stedet for å døpe det slik man gjør i den norske kirke. Selve dåpen må ta sted fra fylte åtte år. Man kan dele ritualet i to hoveddeler – vanndåpen og bekreftelsen, hvor begge er sin egen frelsende ordinans.
+<br>
+Under selve vanndåpen, går den som skal døpes ned i et dåpsbasseng, og blir helt dekket av vann. Dette står i kontrast med den norske kirkes symbolske dråper på barnets hode. De siste dagers hellige mener at en komplett neddykking er en mer bibeltro måte å døpes, siden det er slik Jesus selv døpes av Johannes i Jordan-elven (Matteus 3:13-17). 
+<br><br>
+Bekreftelsen, som kommer rett etter selve vanndåpen, regnes i seg selv som en av de fem frelsende ordinansene. Den som døpes skal bekreftes inn i kirken, og motta Den Hellige Ånd. Selve overføringen av Den Hellige Ånd utføres av en mann, ordinert med prestedomsmakt av det Melkisediske prestedømmet. Denne ordinansen regnes som tilsvarende en konfirmasjon i den norske kirke.
+<br>
+Kjetil sa «Dette er en ordinans som i større grad enn barnevelsignelsen, gjør at man kan få veiledning og inspirasjon i livet». Man har da inngått en pakt med Gud om å opprettholde budene så godt som mulig, og man får i gjengjeld god hjelp på veien. 
+ <br><br>
+Den tredje, frelsende ordinans er mottakelsen av prestedømmet. I Jesu Kristi Kirke av Siste Dagers Hellige er ikke alle med prestelig myndighet utdannede teologer, slik de er i den norske kirken. Det er heller slik at troende menn i menighetene ordineres med embeter som bærer prestedomsmyndighet. Denne ordineringen utføres igjen av ordinerte menn av det melkisediske prestedømmet. Prestedømmet deles i to – det aronske- og det melkisediske prestedømmet. Barn allerede fra tolvårsalderen kan ordineres inn i det aronske prestedømmet, som gir myndighet til å utføre mer praktiske, ytre ting, som nattverd og dåp. Det melkisediske gir åndelig makt, med myndighet til å velsigne, overrekke Den Hellige Ånd, ordinere andre inn i prestedømmet og å beskikke folk til å utføre oppgaver. Kjetil for eksempel, jobber som tannlege, men var ordinert til biskop i menigheten vi besøkte i en femårsperiode. Cecilie, et annet medlem av menigheten, var beskikket til å utføre andre viktige oppgaver i kirken. Det er verdt å merke seg at beskikkelse og ordinasjon ikke er det samme, siden kvinner ikke kan bære prestedomsmakt. 
+<br><br>
+ 
+Mottakelsen av «vår egen begavelse» regnes som den fjerde, frelsende ordinans. Dette er det Kjetil kalte en «tempelpakt», og tar sted i et av de siste dagers helliges mange templer, verden rundt. Dette er en undervisning, og er for de troende en symbolsk vandring tilbake til Gud. Man inngår flere pakter underveis, basert på de hellige skriftene. Dette er sentralt i Jesu Kristi Kirke av Siste Dagers Hellige – å utføre ritualer slik de er beskrevet i bibelen, altså på mest mulig bibeltro måte. 
+<br><br>
+ 
+Besegling, eller det man kaller vielse i den norske kirke, er den femte og siste ordinansen. Denne ordinansen tar sted i et tempel, og er mellom en mann og en kvinne. Det sentrale i de siste dagers helliges ekteskap, og i velsignelsen, er at ekteskapet skal vare i evig tid, og ikke «til døden skiller en ad», som i den norske kirke. Tolker man det bokstavelig, betyr dette at beseglingen ikke brytes når man går til livet etter døden. 
+<br>
+Skilsmisse er lov, men «jeg ønsker absolutt ikke å oppfordre til det» - Kjetil. 
+ <br><br>
+Menn har disse fem hellige, frelsende ordinansene, mens kvinner har fire. Dette er de samme ordinansene, med unntak av overførselen av prestedømmet. 
+ <br>
+ <br>
+Nattverden regnes ikke som en av de fem frelsende ordinanser, men har en sentral rolle i gudstjenestene i Jesu Kristi Kirke av Siste Dagers Hellige. Når man deltar i nattverden fornyer man paktene man inngikk ved dåpen. Den foregår i stor grad slik som den i den norske kirke, med et par unntak:
+Den kan utføres av barn som har blitt ordinert til det aronske prestedømmet. Når vi deltok i en seanse i de siste dagers helliges menighet i Fredrikstad, var det yngre som utførte utdelingen av nattverden. 
+En mer bokstavelig tolkning av bibelens nattverd i det at det utdeles brød og vann, i stedet for oblat og vin/saft.
+ <br><br>
+<h2>Misjon</h2>
+ 
+Misjon er en viktig del av Jesu Kristi Kirke av Siste Dagers Hellige, men regnes ikke som en slags ordinans sådan. Det er derimot sterkt oppfordret til, både for gutter og jenter. I følge Kjetil var det dog kun omkring 10% av Europeiske siste dagers hellige som reiste på misjon. 
+<br>
+Når en skal bli misjonær, ordineres eller beskikkes man for rollen. Guttene mottar da prestedomsmakt, og embete kalt «Eldste». Det er kun når man er misjonær at man får bære tittelen (med unntak av høytstående, kirkelige ledere). Jentene beskikkes for rollen, og bærer tittelen «Søster».
+<br>
+Gutter kan reise fra de er 18, og misjonere i to år. Jenter kan reise fra de er 19, og misjonere i 18 måneder. I tillegg kan man reise som seniormisjonærer når man er eldre. Man kan da tjene vanlig som misjonær, eller være misjonspresident. Misjonspresidentene har mye ansvar og erfaring i sine roller som misjonærer. 
+<br><br>
+
+<h2>Kilder:</h2>
+- <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fnorcalpublicmedia.org%2Fkrcb-news-feed%2Fmormon-temple-in-oakland-open-to-public-for-limited-time&psig=AOvVaw33loOcQ39sdOq7_gHDlm8z&ust=1581625461309000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJCpqIntzOcCFQAAAAAdAAAAABAD">Tempelbilde</a><br>
+- <a href="https://i.pinimg.com/originals/6d/d7/34/6dd734196c30266fdf6fdf422fb3b4c1.jpg">Dåp</a><br>
+- <a href="https://www.churchofjesuschrist.org/study/liahona/2010/06/renewing-covenants-through-the-sacrament?lang=nor">Nadverd</a><br>
+- <a href="https://kirken.no/nb-NO/om-kirken/">Kirken</a><br>
+`
+
+        let sondag = `
+        <br><br>
+        <h1>En søndag i kirken</h1>
+        <br>
+        Gudstjenesten i Jesu Kristi Kirke av Siste Dagers Hellige er ikke like liturgisk som i den norske kirke, her var det mer fokus på tale fra personer i menigheten, og nattverd. Nattverden gjennomføres hver gudstjeneste, hvor det som oftest er misjonærene som bærer ut vann og brød til menigheten. Den første gudstjenesten i måneden er det også mulig for deltagere på gudstjenesten å bære frem sitt vitnesbyrd, og dette var den gudstjenesten vi var med på. Så den første halvtimen snakket Kjetil i noen minutter og åpnet gudstjenesten, før det ble sunget to salmer fra De Siste Dagers Helliges egne salmebok, så snakket Cecilie i noen minutter. Deretter var det en åpen halvtime hvor resten av menigheten snakket. Da fikk vi blant annet høre fra en som ble døpt for rundt 100 dager siden, men som sa at han bare ble mer og mer glad i kirken for hver dag som gikk, og fra en enke fra Kenya som hadde mistet mannen sin for 30 år siden, men som fant trøst i kirken. Etter at flere hadde snakket, blant annet de som passer på misjonærene, ble det igjen sunget en salme, før gudstjenesten ble avsluttet og deltagerne gikk videre til time to, hvor det foregikk litt forskjellige aktiviteter avhengig av aldersgrupper. 
+<br><br>
+De aller minste samles i et rom nede hvor de kan leke og ha det gøy, og når de blir litt eldre prøver man å lære dem litt om noen tekster. Når de blir enda eldre er det etter hvert mer og mer fokus på lære og læredimensjonen, samtidig som man også får oppleve den sosiale dimensjonen til De Siste Dagers Hellige. Dette fordi man har en form for søndagsskole for de voksne, hvor det snakkes, diskuteres og erfaringer deles. Her går det på rundgang hvilken skriftsamling som det undervises i, hvor man veksler mellom Lære og pakter, Bibelen og Mormons bok.`
+
+
+
+
+        let særtrekkText = 
+        `
+        <h1>Særtrekk for konvensjonen</h1>
+        <br>
+        Fortellingsdimensjonen er viktig i Jesu Kristi Kirke av Siste Dagers Hellige. I tillegg til bibelen, har de 3 andre kanoniske standardverk. Disse er "Mormons bok", "Lære og pakter" og "Den kostelige perle". Læredimensjonen og den etiske dimensjonen er, i likhet med i Den Norske Kirke, veldig nært knyttet opp til fortellingsdimensjonen. Særlig er lære og pakters åpenbaringer viktig kirkens etikk og normer.
+
+<br><br>
+<h2>Mormons Bok</h2>
+<br>
+I Jesu Kristi Kirke av Siste Dagers Hellige står Mormons bok veldig sentralt i fortellingsdimensjonen. Den blir kalt et annet testament om Jesus Kristus, og ifølge Siste Dagers Hellige er den nettopp det: Et testamente som komplementerer bibelens gamle og nye testamente, og dermed styrker troverdigheten. Bibelen og Mormons bok vitner om den samme sannheten, men fra ulike perspektiver. Siste Dagers Hellige hevder at sammen viser de et mer helhetlig bilde av sannheten, men at bibelen kun er sann så vidt den er riktig oversatt. Mormons bok derimot, hevdes å være Guds sanne ord.
+<br><br>
+Mormons bok tar for seg historier om folkeslaget som kom til det Amerikanske kontinentet fra Jerusalem rundt år 600 før Kristus. Gjennom ulike historier følger man dette folkeslaget gjennom generasjoner i omtrent 1000 år, og får innblikk i deres oppturer og nedturer. I perioder lever de etter evangeliet, og i perioder ikke. Folket splittes i to grupper, og det oppstår deretter strid mellom gruppene. Etter Jesu oppstandelse besøker han dette folket. Han underviser dem, oppretter sin kirke og gir de myndighet. Etter besøket lever gruppene i fred med hverandre i et par hundre år, men etter hvert skyver de religionen til side og begge gruppene blir igjen ganske krigerske. Det ender med folkemord, der den ene gruppen utraderer den andre. Til slutt avslutter en av de siste gjenlevende fra denne gruppen, Moroni,  opptegnelsen og begraver den i jorden, for senere å lede Joseph Smith til den.
+
+<br><br>
+<h2>Joseph Smith</h2>
+
+Jesu Kristi Kirke av Siste Dagers Hellige ser på seg selv som en gjenopprettelse av den originale kirken, grunnlagt av Jesus Kristus. Det var Joseph Smith som på 1800-tallet grunnla denne gjenopprettede kirken som et resultat av et søk etter den riktige kirken. Joseph Smith ba til Gud om å veilede han i valget om hvilken kirke han skulle følge. Som et svar på bønnen fikk han en åpenbaring der himmelske fader og Jesus Kristus viste seg for han, og han fikk beskjed om at han skulle starte sin egen kirke fordi de andre kirkene hadde beveget seg vekk fra sannheten. 3 år etter denne åpenbaringen ba Joseph Smith igjen, og fikk besøk av engelen Moroni som fortalte han at han skulle bringe fram en nedgravd opptegnelse. Deretter skulle han, gjennom Guds gave og kraft, oversette denne hellige skriften, inngravert i to gullplater. Denne skriften, som på mirakuløst vis ble oversatt, ble utgitt som Mormons bok, og den sies å være Guds ord. Så sant historien om Joseph Smith er sann, tror Siste Dagers Hellige at alt som står i Mormons bok er sann.
+
+<br><br>
+<h2>Jesus Kristi plass i troen</h2>
+<br>
+I likhet med i den Lutherske-protestantiske kirke står Jesus Kristus står veldig sentralt i troen, og individets forhold til han vektlegges. Den troendes opplevelser, altså opplevelsesdimensjonen, er dermed ganske viktig. Den ganske konservative kirken tolker alt Jesus sa og gjorde veldig bokstavelig, mens den Den Norske Kirke er litt mindre bokstavelige i tolkningen når det gjelder visse tema, som for eksempel homofili. De troende tror at gjennom Jesus Kristi forsoning, gav han alle mennesker en sjanse til å oppnå frelse. Medlemmene i kirken strever derfor også etter å gjøre som Jesus, og være lik ham, i den grad det lar seg gjøre. De prøver altså å leve etter hans etiske rettesnor. For å vise seg lydige mot himmelske fars bud, må man nemlig leve gode liv, og først da kan man oppnå frelsen og bli kvitt sine synder. 
+<br><br>
+
+
+
+
+
+<h2>Livet etter døden</h2>
+<br>
+Ifølge Kjetil, er døden en adskillelse av kropp og ånd, der ånden lever videre i et stadium man kan kalle "åndeverdenen". Der vil vi møte alle de som har dødd før oss, familie og venner. Når Jesus vender tilbake, vil ånden igjen bli gjenforent med vår fysiske kropp, en gjenoppstått og perfekt kropp, gjort mulig gjennom Jesu Kristi forsoning. Vi vil motta en herlighetsgrad basert hvordan vi har levd livet på jorda, men tatt i betraktning våre forutsetninger. De tror altså at frelsen er gradert. Deretter vil vi for evig leve i et av de tre himmelrikene: Det telestiale, terrestriale eller celestiale. Sistnevnte er kun for de verdige, og målet for mange Siste Dagers Hellige er å kunne leve i dette riket ved Guds side. Selv om dette er det høyeste riket, beskrives de to andre også som å ha en herlighetsgrad som er utenfor vår forståelse. 
+<br><br>
+På samme måte tror Siste Dagers Hellige at vi levde som himmelske fars åndebarn før vår tid her på jorda. Dette var noe som ble uttalt av Joseph Smith i 1840-årene. Herfra ble vi sendt til jorda og fikk en fysisk kropp og slettet hukommelse, der vi skulle bli testet i vår tro. På jorda skulle vi også lære forskjellen på godt og ondt. Dette er himmelske Fars plan, ofte omtalt "Plan of salvation". Planen er designet slik at flest mulig av hans åndebarn skulle kunne oppnå framgang mot fullstendig herlighet. Hvem som helst kan oppnå denne frelsen, men man må selv velge å ta imot Jesus Kristus og hans frelse og forsoning.
+<br><br>
+
+<h2>Åpenbaring i vår tid</h2>
+<br>
+Siste Dagers Hellige ser på kirkens øverste ledere som Joseph Smith og kirkens etterfølgende presidenter som Guds profeter og apostler i vår tid. Disse blir likestilt med Moses, Abraham, Jesaja og Jesu disipler. Med disse profetene i vår tid kommer fortsatt åpenbaringer og nye skrifter, for eksempel Mormons bok eller mindre bidrag fra kirkens presidenter. Dette er noe vi ikke finner igjen i Den Norske Kirke.
+<br><br>
+
+ 
+<h2>Kirkens Struktur</h2>
+<br>
+Jesu Kristi Kirke av Siste Dagers Hellige har en unik struktur på sitt religiøse hierarki. Øverst er som Kjetil sier Herren selv. Men av vanlige syndige, er det øverste embete holdt av presidenten av kirken – Russel Nelson. Han har to rådgivere, og sammen utgjør de det første presidentskap. Under presidentskapet er de tolv apostlers forum, som består av tolv apostler, slik som i bibelen. Rundt de tolv apostlers forum er det diverse mindre presidentskap, med ansvar for egne områder, blant annet primære osv. Under disse, er de sytti, som er et begrep fra bibelen. Noen sytti har ansvar for egne deler av Europa, som kirken har delt i forskjellige områder. På nasjonalt nivå, har man det som kalles staver. Dette er igjen et bibelsk begrep, som kommer fra Jessaja 33:20-21, der Sion beskrives som et telt, som holdes oppe som teltpæler, eller staver. For eksempel tilhører Fredrikstad, Moss og Oslo menighet til under Oslo Stav. Stav kan da sammenlignes med bispedømmet i den norske kirke, hvor Norge er inndelt i elleve bispedømmer. Helt underst er da de enkelte menighetene. I tillegg har de siste dagers hellige egne presidentskap for templene sine – tempelpresidentskap. 
+Det blir knotete å sammenligne den generelle strukturen av Jesu Kristi Kirke av Siste Dagers Hellige med strukturen til den norske kirke, siden den ene kirken er internasjonal, mens den andre er nasjonal. Et klart likhetstrekk man likevel kan trekke, er de tolv apostlers forum, som baserer seg på bibelens tolv apostler. Det er også tolv biskoper, slik som de tolv apostlene i bibelen. 
+ 
+
+<br><br><br>
+
+
+<h3>Kilder:</h3>
+
+	- Kjetil og Cecilie<br>
+	- <a href="https://en.wikipedia.org/wiki/The_Church_of_Jesus_Christ_of_Latter-day_Saints">The_Church_of_Jesus_Christ_of_Latter-day_Saints</a><br>
+	- <a href="https://www.churchofjesuschrist.org/media-library/video/topics/plan-of-salvation?lang=eng">plan-of-salvation</a><br>
+	- <a href="https://en.wikipedia.org/wiki/Plan_of_salvation_(Latter_Day_Saints)">Plan_of_salvation_(Latter_Day_Saints)</a><br>
+	- <a href="https://no.wikipedia.org/wiki/Joseph_Smith">Joseph_Smith</a><br>
+	- <a href="https://no.wikipedia.org/wiki/Mormons_bok">Mormons_bok</a><br>
+	- <a href="https://en.wikipedia.org/wiki/Degrees_of_glory">Degrees_of_glory</a><br>
+	- <a href="https://www.bible.com/no/bible/102/ISA.33.20-21.NB ">Bible.com</a><br>
+	- <a href="https://no.wikipedia.org/wiki/Den_norske_kirke#Nasjonalt_niv%C3%A5 ">Den Norske Kirke</a><br>
+	- <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.com%2FMormons-Bok-Norwegian-Book-Mormon%2Fdp%2F8270843075&psig=AOvVaw1o4ladwdUWUFIRdcTgCqsb&ust=1581626053046000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJCMxcXuzOcCFQAAAAAdAAAAABAD">Mormons bok(bilde)</a><br>
+	- <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fno.wikipedia.org%2Fwiki%2FJoseph_Smith&psig=AOvVaw1-TMX434liEVqoKvGt07ee&ust=1581626163623000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLCC2N_uzOcCFQAAAAAdAAAAABAD">Joseph Smith(bilde)</a><br>
+	- <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.churchofjesuschrist.org%2Fchurch%2Fleader%2Frussell-m-nelson%3Flang%3Deng&psig=AOvVaw2heoMoRB9qY5-kaxNIqs3a&ust=1581626360394000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNjS_MHvzOcCFQAAAAAdAAAAABAD">President Nelson(bilde)</a><br>
+
+        `
+        
+        forside()
+    </script>
+
+
+    
+</body>
+</html>

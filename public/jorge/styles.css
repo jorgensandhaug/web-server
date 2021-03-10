@@ -1,0 +1,72 @@
+body {
+  justify-content: center;
+  align-items: center;
+  display:flex;
+  min-height: 100vh;
+}
+
+.header {
+  color: black;
+  font-size: 4em;
+  font-style: monospace;
+  text-align: center;
+  text-shadow: 1px 2px #424242;
+  margin-bottom: 30px;
+}
+
+.prosjektGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1em;
+  justify-content: center;
+  text-align: center;
+  font-size: 2em;
+
+}
+
+.box {
+  background-color: rgba(144, 206, 236, 0.42);
+  border-radius: 10%;
+  padding: 0.5em 1em;
+}
+
+
+.box span:hover {
+  text-shadow: 1px 0 0 currentColor;
+
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+canvas {
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+.AA {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 10px;
+  
+}
+
+.hidden {
+  font-size: 100px;
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  
+}
+
+.AA:hover ~ .hidden {
+  display: block;
+}

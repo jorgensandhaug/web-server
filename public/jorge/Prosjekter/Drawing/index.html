@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            background-color: black;
+        }
+        div{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        input{
+            width: 70px;
+        }
+        #color{
+            width: 74px;
+        }
+        canvas{
+            background-color: white;
+        }
+        button{
+            width: 74px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="number" placeholder="Draw-radius"><br>
+        <input type="number" placeholder="Width" id="wid"><br>
+        <input type="number" placeholder="Heigth" id="hei"><br>
+        <select id="color">
+            <option>White</option>
+            <option>Black</option>
+            <option>Blue</option>
+            <option>Red</option>
+            <option>Yellow</option>
+            <option>Green</option>
+            <option>Orange</option>
+            <option>Purple</option>
+            <option>Pink</option>
+            <option>Brown</option>
+            <option>Gray</option>
+            <option>Gradient</option>
+            <option>Slidermode</option>
+            <option>Nissemode</option>
+
+        </select><br>
+        <select id="shape">
+            <option>Freehand</option>
+            <option>Line (point to point)</option>
+
+
+        </select>
+        <button>Clear</button>
+    </div>
+    <canvas></canvas>
+    <script src="animationLibrary.js"></script>
+    <script src="draw.js"></script>
+</body>
+</html>
