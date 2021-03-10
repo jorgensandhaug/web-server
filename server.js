@@ -16,15 +16,18 @@ app.get("/", (req, res) =>{
 
 
 const routes = [
-    ("jorge", "sound_visualizer", "nettside-jorgen/Prosjekter/SoundVisualizer"),
-    ("jorge", "tetris", "nettside-jorgen/Prosjekter/Tetris"),
-    ("jorge", "tank", "nettside-jorgen/Prosjekter/Tank, A Fullfilling Gaming Experience"),
-    ("jorge", "tegneprogram", "nettside-jorgen/Prosjekter/Drawing"),
-    ("jorge", "platformer", "nettside-jorgen/Prosjekter/Platformer")
+    ["jorge", "sound_visualizer", "nettside-jorgen/Prosjekter/SoundVisualizer"],
+    ["jorge", "tetris", "nettside-jorgen/Prosjekter/Tetris"],
+    ["jorge", "tank", "nettside-jorgen/Prosjekter/Tank, A Fullfilling Gaming Experience"],
+    ["jorge", "tegneprogram", "nettside-jorgen/Prosjekter/Drawing"],
+    ["jorge", "platformer", "nettside-jorgen/Prosjekter/Platformer"]
     ];
 
 routes.forEach( tup =>{
-    const [site, name, path] = tup;
+    const site = tup[0];
+    const name = tup[1];
+    const path = tup[2];
+    
     app.get("/"+site+"/"+name+"/"+path, (req, res) =>{
         res.sendFile("index.html", {root: "/home/sandhaug/"+site+"/"+path+"/"});
     })
