@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="js/snake.js" defer></script>
+    <script src="js/fruit.js" defer></script>
+    <script src="js/game.js" defer></script>
+
+    <img id="fruitIMG" src="images/fruit.png" width="20" height="20">
+</head>
+
+<body>
+    <div id="container">
+        <p>Press F11 for a better experience</p>
+        <h3 id="highScoreDisplay">Highscore: 0 by Simen</h1>
+            <div id="display">
+                <h2 id="fruitDisplay">Fruits Eaten: 0</h2>
+                <h2 id="timeDisplay">Time: 0</h2>
+            </div>
+            <br>
+            <canvas class="canvas" height="500" width="500"></canvas> <br>
+            <button type="button" class="button" onclick="setup()">Restart Game</button>
+    </div>
+    <div id="endScreen">
+        <h1 style="color: white;">Game over</h1>
+        <h4 id="endScore"></h4>
+        <h4 id="endTime"></h4>
+        <img id="JonnernErGlad" src="images/jonnernErGlad.png" alt="Jonnern Er Megaglad" width="500" height="300">
+    </div>
+</body>
+
+</html>

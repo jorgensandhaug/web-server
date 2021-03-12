@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <h1>JavaScript Kalkulator</h1>
+        <div id="kalkulator">
+            <div id="miniDisplay">0</div>
+            <input type="text" id="display" value="" disabled />
+            <button id="backspace" type="button" onclick="backSpace()">←</button>
+            <br>
+            <button class="button" type="button" onclick="clearAll()">C</button>
+            <button class="button" type="button" onclick="sqrt()">√</button>
+            <button class="button" type="button" onclick="plusMinus()">+/-</button>
+            <button class="button" type="button" onclick="getOperator('/')">/</button>
+            <button class="button" type="button" onclick="factorial()">!</button>
+            <button class="button" type="button" onclick="sinCosTanLgLn('sin')">sin</button>
+            <button class="button" type="button" onclick="aSinCosTan('asin')">asin</button>
+            <br>
+            <button class="button" type="button" onclick="arrayPush(7)">7</button>
+            <button class="button" type="button" onclick="arrayPush(8)">8</button>
+            <button class="button" type="button" onclick="arrayPush(9)">9</button>
+            <button class="button" type="button" onclick="getOperator('x')">x</button>
+            <button class="button" type="button" onclick="getOperator('xroot')">y√x</button>
+            <button class="button" type="button" onclick="sinCosTanLgLn('cos')">cos</button>
+            <button class="button" type="button" onclick="aSinCosTan('acos')">acos</button>
+            <br>
+            <button class="button" type="button" onclick="arrayPush(4)">4</button>
+            <button class="button" type="button" onclick="arrayPush(5)">5</button>
+            <button class="button" type="button" onclick="arrayPush(6)">6</button>
+            <button class="button" type="button" onclick="getOperator('-')">-</button>
+            <button class="button" type="button" onclick="getOperator('^')">x^y</button>
+            <button class="button" type="button" onclick="sinCosTanLgLn('tan')">tan</button>
+            <button class="button" type="button" onclick="aSinCosTan('atan')">atan</button>
+            <br>
+            <button class="button" type="button" onclick="arrayPush(1)">1</button>
+            <button class="button" type="button" onclick="arrayPush(2)">2</button>
+            <button class="button" type="button" onclick="arrayPush(3)">3</button>
+            <button class="button" type="button" onclick="getOperator('+')">+</button>
+            <button class="button" type="button" onclick="arrayPush(Math.E.toFixed(5))">e</button>
+            <button class="button" type="button" onclick="sinCosTanLgLn('lg')">lg</button>
+            <br>
+            <button id="zeroButton" type="button" onclick="arrayPush(0)">0</button>
+            <button class="button" type="button" onclick="arrayPush('.')">.</button>
+            <button class="button" type="button" onclick="calculate()">=</button>
+            <button class="button" type="button" onclick="arrayPush(Math.PI.toFixed(5))">PI</button>
+            <button class="button" type="button" onclick="sinCosTanLgLn('ln')">ln</button>
+        </div>
+    </div>
+</body>
+<script src="calculator.js"></script>
+<script src="functions.js"></script>
+
+</html>

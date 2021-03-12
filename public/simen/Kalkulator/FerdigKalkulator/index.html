@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="table1Div">
+        <table id="table1">
+            <tr>
+                <th>Methods</th>
+                <th>Command</th>
+                <th>Alternative</th>
+            </tr>
+            <tr>
+                <td class="method">Reload/Clear</td>
+                <td class="op">F5</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="method">*</td>
+                <td class="op">*</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="method">/</td>
+                <td class="op">/</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="method">+</td>
+                <td class="op">+</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="method">-</td>
+                <td class="op">-</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="method">modulo</td>
+                <td class="op">%</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="method">!</td>
+                <td class="op">x!</td>
+                <td class="op">(x)!</td>
+            </tr>
+            <tr>
+                <td class="method">deg/rad</td>
+                <td>deg(r)</td>
+                <td>rad(d)</td>
+            </tr>
+            <tr>
+                <td class="method">√x</td>
+                <td>sqrt(x)</td>
+                <td>Math.sqrt(x)</td>
+            </tr>
+            <tr>
+                <td class="method">x^y</td>
+                <td>pow(x, y)</td>
+                <td>Math.pow(x, y)</td>
+            </tr>
+            <tr>
+                <td class="method">y√x</td>
+                <td>pow(x, 1/y)</td>
+                <td>Math.pow(x, 1/y)</td>
+            </tr>
+            <tr>
+                <td class="method">sin</td>
+                <td>sin(x)</td>
+                <td>Math.sin(x)</td>
+            </tr>
+            <tr>
+                <td class="method">sin-1</td>
+                <td>asin(x)</td>
+                <td>Math.asin(x)</td>
+            </tr>
+            <tr>
+                <td class="method">cos</td>
+                <td>cos(x)</td>
+                <td>Math.cos(x)</td>
+            </tr>
+            <tr>
+                <td class="method">cos-1</td>
+                <td>acos(x)</td>
+                <td>Math.acos(x)</td>
+            </tr>
+            <tr>
+                <td class="method">tan</td>
+                <td>tan(x)</td>
+                <td>Math.tan(x)</td>
+            </tr>
+            <tr>
+                <td class="method">tan-1</td>
+                <td>atan(x)</td>
+                <td>Math.atan(x)</td>
+            </tr>
+            <tr>
+                <td class="method">ln</td>
+                <td>log(x)</td>
+                <td>Math.log(x)</td>
+            </tr>
+            <tr>
+                <td class="method">log</td>
+                <td>log10(x)</td>
+                <td>Math.log10(x)</td>
+            </tr>
+        </table>
+    </div>
+    <div id="Kalkulator">
+        <div>
+            <h1>Kalkulator</h1>
+            <p>Desimaler</p>
+            <button class="dec-button" type="button" onclick="decimals('-')">-</button>
+            <input type="text" value="2" id="decimalDisplay" disabled>
+            <button class="dec-button" type="button" onclick="decimals('+')">+</button>
+            <h3>Skriv inn et regnestykke:</h3>
+            <button id="showInstructions" type="button" onclick="showInstructions()">i</button>
+            <h4 id="miniDisplay">0</h4>
+            <input autofocus onblur="this.focus()" type="text" id="mainDisplay" value="" />
+        </div>
+        <br>
+        <div id="buttons">
+            <button class="button" onclick="push(1)">1</button>
+            <button class="button" onclick="push(2)">2</button>
+            <button class="button" onclick="push(3)">3</button>
+            <button class="button" onclick="push('+')">+</button>
+            <button class="button" onclick="push('Math.E')">e</button>
+            <br>
+            <button class="button" onclick="push(4)">4</button>
+            <button class="button" onclick="push(5)">5</button>
+            <button class="button" onclick="push(6)">6</button>
+            <button class="button" onclick="push('-')">-</button>
+            <button class="button" onclick="push('Math.PI')">𝜋</button>
+            <br>
+            <button class="button" onclick="push(7)">7</button>
+            <button class="button" onclick="push(8)">8</button>
+            <button class="button" onclick="push(9)">9</button>
+            <button class="button" onclick="push('*')">*</button>
+            <button class="button" onclick="push('(1+sqrt(5))/2')">φ</button>
+            <br>
+            <button class="button" onclick="push(0)">0</button>
+            <button class="button" onclick="push('/')">/</button>
+            <button class="button" onclick="push('%')">%</button>
+            <button class="button" onclick="push('(')">(</button>
+            <button class="button" onclick="push(')')">)</button>
+            <br>
+            <button class="button" onclick="push('sin(x)')">sin</button>
+            <button class="button" onclick="push('asin(x)')">sin<sup>-1</sup></button>
+            <button class="button" onclick="push('log(x)')">l n</button>
+            <button class="button" onclick="push('log10(x)')">log</button>
+            <button class="button" onclick="push('rad(d)')">rad</button>
+            <br>
+            <button class="button" onclick="push('cos(x)')">cos</button>
+            <button class="button" onclick="push('acos(x)')">cos<sup>-1</sup></button>
+            <button class="button" onclick="push('sqrt(x)')">√x</button>
+            <button class="button" onclick="push('!')">!</button>
+            <button class="button" onclick="push('deg(r)')">deg</button>
+            <br>
+            <button class="button" onclick="push('tan(x)')">tan</button>
+            <button class="button" onclick="push('atan(x)')">tan<sup>-1</sup></button>
+            <button class="button" onclick="push('pow(x, y)')">x<sup>y</sup></button>
+            <button class="button" onclick="push('pow(x, 1/y)')"><sup>y</sup>√x</button>
+            <button class="button" onclick="clearDisplay()">AC</button>
+        </div>
+    </div>
+    <div id="table2Div">
+        <table id="table2">
+            <tr>
+                <th>Constants</th>
+                <th>Command</th>
+            </tr>
+            <tr>
+                <td>𝜋</th>
+                <td>Math.PI</th>
+            </tr>
+            <tr>
+                <td>e</td>
+                <td>Math.E</td>
+            </tr>
+            <tr>
+                <td>ln(2)</td>
+                <td>Math.LN2</td>
+            </tr>
+            <tr>
+                <td>ln(10)</td>
+                <td>Math.LN10</td>
+            </tr>
+            <tr>
+                <td>log2(e)</td>
+                <td>Math.LOG2E</td>
+            </tr>
+            <tr>
+                <td>1/√2</td>
+                <td>Math.SQRT1_2</td>
+            </tr>
+            <tr>
+                <td>√2</td>
+                <td>Math.SQRT2</td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script src="app.js"></script>
+
+</html>

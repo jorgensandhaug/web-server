@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+body {
+    background: rgb(255, 111, 145);
+    background: linear-gradient(90deg, rgba(255, 111, 145, 1) 0%, rgba(255, 150, 113, 1) 50%, rgba(249, 248, 113, 1) 100%);
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 3vw;
+    color: #845EC2;
+    margin: auto;
+    -webkit-text-stroke: black 0.05px;
+    cursor: default;
+}
+
+h3 {
+    color: #845EC2;
+    margin: auto;
+    cursor: default;
+}
+
+h4 {
+    color: rgb(53, 52, 52);
+    cursor: default;
+}
+
+#Kalkulator {
+    margin-top: 2vw;
+    margin-left: 6vw;
+    width: 33vw;
+    float: left;
+    background: rgb(255, 199, 95);
+    background: radial-gradient(circle, rgba(255, 199, 95, 1) 0%, rgba(255, 111, 145, 1) 100%);
+    height: 42vw;
+    opacity: 0.8;
+    box-shadow: 0px 0px 7px 8px rgba(79, 79, 79, 1);
+}
+
+p {
+    margin: 0;
+}
+
+.dec-button {
+    font-size: 1vw;
+    display: inline-block;
+    background-color: #FFC75F;
+    width: 4vw;
+    height: 2vw;
+    margin: -0.2vw;
+    border: none;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    outline: 0;
+    background: none;
+}
+
+#decimalDisplay {
+    display: inline-block;
+    font-family: 'Orbitron', sans-serif;
+    background: none;
+    width: 2vw;
+    font-size: 1.5vw;
+    text-align: center;
+    border: none;
+    outline: none;
+    color: black;
+}
+
+.button {
+    background-color: #FFC75F;
+    width: 5.5vw;
+    height: 4vw;
+    margin: -0.3vw;
+    border: none;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    outline: 0;
+    background: none;
+}
+
+input {
+    font-family: 'Open Sans Condensed', sans-serif;
+    background: none;
+    width: 27vw;
+    font-size: 4vw;
+    margin: 0;
+    text-align: right;
+    border: none;
+    outline: none;
+}
+
+table {
+    background-color: #FF9671;
+    display: inline-block;
+    border-collapse: collapse;
+    cursor: default;
+}
+
+#table1Div {
+    margin-left: -5.5vw;
+    width: 33vw;
+    float: left;
+}
+
+#table2Div {
+    margin-right: -9vw;
+    width: 33vw;
+    float: right;
+}
+
+#table2 td:nth-child(odd) {
+    text-align: center;
+}
+
+.op {
+    text-align: center;
+}
+
+.method {
+    text-align: center;
+}
+
+tbody {
+    border: 2px solid black;
+}
+
+td {
+    font-family: 'Open Sans Condensed', sans-serif;
+    border: 1px solid black;
+    padding: 1px;
+    cursor: default;
+}
+
+
+th {
+    text-align: left;
+    border: 1px solid black;
+    background-color: #845EC2;
+    color: #F9F871;
+    padding: 2px;
+    cursor: default;
+}
+
+tr {
+    margin: auto;
+    padding: auto;
+    cursor: default;
+}
+
+#showInstructions {
+    text-align: center;
+    background: none;
+    height: 2.5vw;
+    width: 2.5vw;
+    margin: auto;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 100vw;
+    outline: 0;
+    font-size: 1.5vw;
+    font-family: 'Lobster', cursive;
+}
+
+#miniDisplay {
+    text-align: right;
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin: 0;
+    width: 30vw;
+}

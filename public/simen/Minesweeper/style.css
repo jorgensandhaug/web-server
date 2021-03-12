@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
+
+body {
+    background-color: white;
+    user-select: none;
+}
+
+#canvas {
+    margin: auto;
+    border: 8px solid #dadada;
+    border-style: ridge;
+}
+
+img {
+    width: 0;
+}
+
+#header {
+    background-color: #aaa9a9;
+    margin: auto;
+    text-align: center;
+    border: 8px solid #dadada;
+    border-style: ridge;
+    height: 50px;
+}
+
+#button {
+    text-align: center;
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background-image: url('images/facingDown.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0px 0px 2px 3px #888888;
+    padding: 0;
+}
+
+#mineCount {
+    font-family: 'Quantico', sans-serif;
+    font-size: 20px;
+    color: red;
+    background-color: black;
+    box-shadow: 0px 0px 2px 3px #888888;
+    float: left;
+    margin-left: 10px;
+    padding: 0;
+}
+
+#timer {
+    font-family: 'Quantico', sans-serif;
+    font-size: 20px;
+    color: red;
+    background-color: black;
+    box-shadow: 0px 0px 2px 3px #888888;
+    height: 30;
+    float: right;
+    margin-right: 10px;
+    padding: 0;
+}
+
+#endTime {
+    opacity: 1;
+    color: black;
+}
+
+#Smiley {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+}
+
+#taskbar {
+    margin: auto;
+}
+
+#settings {
+    margin-bottom: 2px;
+    text-decoration: blue;
+    text-decoration-line: underline;
+    color: blue;
+    text-align: left;
+}
+#settings:hover {
+    cursor: pointer;
+}
+
+#settingsBox {
+    left: 50%;
+    position: absolute;
+    width: 250px;
+    height: 210px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+#settingsBoxHeader {
+    background-color: blue;
+    color: white;
+    width: auto;
+    height: 20px;
+}
+
+#settingsBoxDisplay {
+    background-color: lightgray;
+}
+
+#settingsBoxDisplayTable {
+    margin-left: auto;
+}
+
+th {
+    font-size: small;
+}
+
+td {
+    width: 30px;
+}
+
+#tableDisplayBeginner {
+    display: inline;
+    margin-left: 60px;
+}
+
+#tableDisplayIntermediate {
+    display: inline;
+    margin-left: 35px;
+}
+
+#tableDisplayExpert {
+    display: inline;
+    margin-left: 75px;
+}
+
+#tableDisplayCustom {
+    margin-left: 40px;
+    display: inline;
+}
+
+#NewGameButton {
+    margin-left: 5px;
+}
+
+.custom {
+    width: 30px;
+    appearance: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}

@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+
+.canvas {
+    background-color: #3e3e3e;
+    background-image: url('images/snakebackground.png');
+    background-blend-mode: lighten;
+    margin: 0;
+    border: 5px solid white;
+}
+
+body {
+    background-image: url('images/snakebodybackground.png');
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    overflow: hidden;
+}
+
+
+#container {
+    text-align: center;
+}
+
+.button {
+    height: 100px;
+    width: 510px;
+    background-color: red;
+    margin-top: -10px;
+    border: none;
+    background-color: seagreen;
+    outline: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 35px;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+h1 {
+    color: thistle;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    display: inline-block;
+    margin: auto;
+    border: none;
+    background-color: red;
+    width: 250px;
+    padding: 0;
+}
+
+h3 {
+    color: thistle;
+    margin: 0;
+    font-size: 35px;
+    padding: 0;
+}
+
+#fruitIMG {
+    visibility: hidden;
+}
+
+#display {
+    margin: auto;
+    background-color: red;
+    width: 510px;
+    display: inline-block;
+}
+
+#endScreen {
+    padding: 0;
+    width: 505px;
+    height: 505px;
+    background-color: black;
+    position: absolute;
+    text-align: center;
+    color: white;
+    left: 50%;
+    margin-left: -252.5px;
+    margin-top: -601.5px;
+}
+
+h4 {
+    font-size: 27px;
+}
+
+#JonnernErGlad {
+    margin-top: 32px;
+}
+
+p {
+    margin: 0;
+    color: white;
+}
