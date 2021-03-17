@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newton's lov for universell gravitasjon</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fordypningsprosjekt.css">
+    <script src="js/fordypningsprosjekt.js" defer></script>
+    <script src="js/background.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="title">Solsystem</h1>
+        <img class="arrowBack" src="images/arrowback.png" alt="Tilbake til hovedmeny" width="50px" height="50px"
+            onclick=location.href='index.html'>
+        <canvas id="canvas" width="1600px" height="800px">
+
+        </canvas>
+        <div id="info">
+            <p id="fps" class="infoP"></p>
+            <p id="targetMass" class="infoP"></p>
+            <p id="targetRadius" class="infoP"></p>
+            <p id="targetPosX" class="infoP"></p>
+            <p id="targetPosY" class="infoP"></p>
+            <p id="targetVelocity" class="infoP"></p>
+        </div>
+        <div id="options">
+            <p class="optionHeader">Celestial body options</p>
+            <br>
+            <label for="bodySelect">Target: </label>
+            <select id="bodySelect" name="bodySelect">
+            </select>
+            <br>
+            <br>
+            <label for="massInput">Mass: </label><input class="optionInput" type="number" id="massInput">
+            <br>
+            <label for="xInput">x: </label><input class="optionInput" type="number" id="xInput">
+            <br>
+            <label for="yInput">y: </label><input class="optionInput" type="number" id="yInput">
+            <br>
+            <label for="radiusInput">Radius: </label><input class="optionInput" type="number" id="radiusInput">
+            <br>
+            <button class="gButton" onclick="setBody()">Set</button>
+            <br>
+            <button class="gButton" onclick="deleteBody()">Delete</button>
+            <div id="lineBreak"></div>
+            <p class="optionHeader">Create new body</p>
+            <label for="createX">x:</label><input type="number" id="createX" class="optionInput"> <br>
+            <label for="createY">y:</label><input type="number" id="createY" class="optionInput"> <br>
+            <label for="createM">Mass:</label><input type="number" id="createM" class="optionInput">
+            <br>
+            <label for="createR">Radius:</label><input type="number" id="createR" class="optionInput">
+            <br>
+            <label for="createVX">Velocity-x:</label><input type="number" id="createVX"
+                class="optionInput"> <br>
+            <label for="createVY">Velocity-y:</label><input type="number" id="createVY"
+                class="optionInput"> <br>
+            <label for="createName">Name:</label><input type="text" id="createName" class="optionInput" maxlength="8">
+            <br>
+            <label for="createisImmovable">Immovable:</label><input type="checkbox" id="createisImmovable" class="optionInput">
+            <br>
+            <button class="gButton" onclick="createBody()">Create</button>
+            <div id="lineBreak"></div>
+            <p class="optionHeader">Universal options</p>
+            <div id="universalOptions">
+                <label for="orbitCheck">Draw Orbits:</label><input type="checkbox" id="orbitCheck" class="optionInput" checked>
+                <br>
+                <label for="vectorCheck">Draw Vectors:</label><input type="checkbox" id="vectorCheck" class="optionInput" checked>
+                <br>
+                <label for="onlyTargetCheck">Draw Only Target</label><input type="checkbox" id="onlyTargetCheck" class="optionInput">
+                <br>
+                <label for="nameCheck">Draw Names:</label><input type="checkbox" id="nameCheck" class="optionInput" checked>
+                <br>
+                <label for="time">Speed:</label><input type="range" min="100" value="500" max="1000" id="time" class="optionInput" onchange="game.changeSpeed()">
+            </div>
+            <br>
+            <button class="gButton" onclick="game.pauseInterval()">Pause</button>
+            <br>
+            <button class="gButton" onclick="game.startInterval()">Resume</button>
+        </div>
+    </div>
+</body>
+
+</html>

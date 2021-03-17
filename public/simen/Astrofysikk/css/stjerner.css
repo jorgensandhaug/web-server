@@ -1,0 +1,15 @@
+.starIMG {
+    width: 300px;
+    height: 300px;
+    box-shadow: 0px 0px 8px 7px #888888;
+    margin-bottom: 20px;
+}
+
+#title {
+    margin: auto;
+    width: 200px;
+    text-align: center;
+    font-size: 70px;
+    color: white;
+    margin-right: 46%;
+}

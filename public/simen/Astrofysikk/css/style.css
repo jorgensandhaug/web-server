@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap');
+
+body {
+    margin: 0;
+    background-image: url('../images/background.jpeg');
+    overflow-x: hidden;
+    font-family: 'PT Sans', sans-serif;
+}
+
+#contentContainer {
+    margin: auto;
+    text-align: center;
+}
+
+#headerContainer {
+    width: 500px;
+    margin: auto;
+    text-align: center;
+    box-shadow: 0px 0px 8px 7px #888888;
+    background-color: rgba(51, 47, 47, 0.8);
+    color: #cecece;
+    font-family: 'Pathway Gothic One', sans-serif;
+}
+
+#panningContainer {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+#panCanvas {
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+    margin-top: 100px;
+    right: 0;
+}
+
+.mainMenuBtn:hover,
+#headerContainer:hover {
+    cursor: pointer;
+}
+
+sup {
+    vertical-align: super;
+    font-size: smaller;
+}
+
+h5 {
+    font-size: 25px;
+    margin: 0;
+}
+
+.starInfo {
+    top: 5%;
+    right: 70%;
+    position: absolute;
+    padding: 5px;
+    width: 480px;
+    text-align: center;
+    box-shadow: 0px 0px 8px 7px #888888;
+    background-color: rgba(51, 47, 47, 0.8);
+    color: #cecece;
+    outline: none; 
+}
+
+.starInfoHeader {
+    top: 5%;
+    left: 37.1%;
+    position: absolute;
+    padding: 5px;
+    width: 480px;
+    text-align: center;
+    box-shadow: 0px 0px 8px 7px #888888;
+    background-color: rgba(51, 47, 47, 0.8);
+    color: #cecece;
+    outline: none;
+}
+
+.starFact {
+    top: 5%;
+    left: 70%;
+    position: absolute;
+    padding: 5px;
+    width: 480px;
+    text-align: center;
+    box-shadow: 0px 0px 8px 7px #888888;
+    background-color: rgba(51, 47, 47, 0.8);
+    color: #cecece;
+    outline: none; 
+}
+
+@keyframes panning {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    25% {
+        background-position: 100% 100%;
+    }
+
+    50% {
+        background-position: 100% 0%;
+    }
+
+    75% {
+        background-position: 0 100%;
+    }
+
+    200% {
+        background-position: 0 0;
+    }
+}
+
+.container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url('../images/background1.jpeg');
+    background-size: 100%;
+    animation: panning 50s infinite linear;
+}
+
+.arrowBack {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.arrowBack:hover {
+    cursor: pointer;
+}
+
+.button {
+    font-size: 25px;
+    font-weight: bolder;
+    padding: 20px;
+    width: 500px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #252525;
+    outline: none;
+}
+
+.button:hover {
+    cursor: pointer;
+} 

@@ -1,0 +1,2 @@
+let backgrounds = ['background1.jpeg', 'background8.jpg', 'background4.jpg', 'background5.jpg', 'background6.jpg', 'background7.jpg', 'background9.jpg'];
+document.querySelector(".container").style.backgroundImage = `url(../images/${backgrounds[Math.floor(Math.random() * backgrounds.length)]})`;
