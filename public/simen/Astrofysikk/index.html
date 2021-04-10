@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrofysikk</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mainmenu.css">
+    <script src="js/mainmenubackground.js" defer></script>
+
+    <style>
+        body {
+            overflow-y: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="taskbar">
+            <div id="title"></div>
+            <img id="dropDownList" src="images/list.png" alt="Menyliste" onclick="toggleButtons()">
+            <div id="buttonMenu">
+                <button class="button" onclick="location.href='stjerner.html'">
+                    Stjerner
+                </button>
+                <br>
+                <button class="button" onclick="location.href='asteroids.html'">
+                    Asteroids Minigame
+                </button>
+                <br>
+                <button class="button" onclick="location.href='formler.html'">
+                    Formelsamling for kapittelet
+                </button>
+                <br>
+                <button class="button" onclick="location.href='fordypningsprosjekt.html'">
+                    Solsystem Simulasjon
+                </button>
+                <br>
+                <button class="button" onclick="location.href='hrdiagram.html'">
+                    HR - Diagram
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

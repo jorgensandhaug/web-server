@@ -1,0 +1,45 @@
+#canvas {
+    background-color: white;
+    background-image: url("../images/hr-diagram.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-container>div {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#outputDiv {
+    color: white;
+    font-size: 20px;
+    background-color: rgba(51, 47, 47, 0.8);
+    width: 620px;
+    height: 230px;
+}
+
+p {
+    margin: 25px;
+}
+
+#buttonDiv {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+#buttonDiv>button {
+    width: 300px;
+    margin: 10px;
+}
