@@ -1,0 +1,111 @@
+body {
+	background-color: #eee;
+}
+
+.card {
+	display: flex;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	width: 5em;
+	height: 7em;
+	background-color: #ffffff;
+	box-shadow: 0 0.0625em 0.125em rgba(0, 0, 0, 0.15);
+	border-radius: 0.25em;
+}
+
+.cardHidden {
+	width: 5em;
+	height: 7em;
+	box-shadow: 0 0.0625em 0.125em rgba(0, 0, 0, 0.15);
+	border-radius: 0.25em;
+	background-image: url('https://freepikpsd.com/wp-content/uploads/2019/10/playing-card-back-png-3-Transparent-Images.png');
+	background-size: 100%;
+}
+
+.card .valueTopRight {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.card .valueBottomLeft {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.card .suit {
+	position: relative;
+	font-size: 45px;
+}
+
+.red {
+	color: red;
+}
+
+.black {
+	color: black;
+}
+
+.dealer {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.dealerCards {
+	display: flex;
+	flex-direction: row;
+}
+
+.player__hands {
+	height: 50em;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.player {
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #ececec;
+}
+
+.player .card:nth-child(4){
+	margin-right: 2.5em;
+	top: 1em;
+}
+.player .card:nth-child(5){
+	margin-right: 5em;
+	top: 2em;
+}
+.player .card:nth-child(6){
+	margin-right: 7.5em;
+	top: 3em;
+}
+.player .card:nth-child(7){
+	margin-right: 10em;
+	top: 4em;
+}
+.player .card:nth-child(8){
+	margin-right: 12.5em;
+	top: 5em;
+}
+.player .card:nth-child(9){
+	margin-right: 15em;
+	top: 6em;
+}
+
+.bets {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
