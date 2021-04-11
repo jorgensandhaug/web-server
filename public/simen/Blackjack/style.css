@@ -1,5 +1,6 @@
 body {
 	background-color: #eee;
+	overflow: hidden;
 }
 
 .card {
@@ -71,9 +72,10 @@ body {
 }
 
 .player {
+	height: 45em;
+	width: 10em;
 	display: flex;
 	flex-direction: column-reverse;
-	justify-content: space-between;
 	align-items: center;
 	background-color: #ececec;
 }
@@ -104,8 +106,35 @@ body {
 }
 
 .bets {
+	height: 50em;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.sit__down__button {
+	position: relative;
+	width: 12em;
+	background-color: #ececec;
+	bottom: 2.5em;
+}
+
+.total {
+	margin: 25px;
+}
+
+.buttonDiv {
+	margin: 25px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
+}
+
+.sit__down__div {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
 }

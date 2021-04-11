@@ -5,32 +5,37 @@ class Player {
         this.cards = [];
         this.doubleAvailable = true;
         this.standTotal = false;
+        this.soft = false;
+        this.blackjack = false;
     }
     showTotal = () => {
-        if(!this.standTotal) this.total = this.getTotal();
+        if (!this.standTotal) this.total = this.getTotal();
         this.El.childNodes[1].innerHTML = this.total;
     }
     getTotal = () => {
         let sum = 0;
-        let soft = false;
+        this.soft = false;
         for (let i = 0; i < this.cards.length; i++) {
             sum += this.cards[i];
-            if (this.cards[i] === 1) soft = true;
+            if (this.cards[i] === 1) this.soft = true;
         }
-        if (soft == true) return sum + 10 >= 21 ? sum : `${sum}/${sum+10}`;
+        if (this.soft == true) return sum + 10 >= 21 ? sum : `${sum}/${sum+10}`;
         else return sum;
     }
     placeBet = amount => {
         if (amount > this.balance) return;
         else this.bet = amount;
     }
-    win = blackjack => {
-        // if (blackjack) {
-        //     this.balance += this.bet * 2.5;
-        //     this.El.childNodes[1].innerHTML = `You won ${this.bet * 2.5}`;
-        // } else this.balance += this.bet * 2;
-        // this.El.childNodes[1].innerHTML = `You won ${this.bet * 2}`;
-        this.El.childNodes[1].innerHTML = `You win`;
+    win = () => {
+        if (this.blackjack) {
+            //this.balance += this.bet * 2.5;
+            //this.El.childNodes[1].innerHTML = `You won ${this.bet * 2.5}`;
+            this.El.childNodes[1].innerHTML = `${this.total} Blackjack`;
+        } else {
+            //this.balance += this.bet * 2;
+            //this.El.childNodes[1].innerHTML = `You won ${this.bet * 2}`;
+            this.El.childNodes[1].innerHTML = `${this.total} You win`;
+        }
     }
     bust = () => {
         this.El.childNodes[1].innerHTML = `${this.total} You Bust`;
@@ -38,8 +43,11 @@ class Player {
         Game.nextPlayer();
     }
     lose = () => {
-        this.El.childNodes[1].innerHTML = "You Lose";
+        this.El.childNodes[1].innerHTML = `${this.total} You Lose`;
         this.removeButtons();
+    }
+    push = () => {
+        this.El.childNodes[1].innerHTML = `${this.total} You Push`
     }
     drawCard = () => {
         this.El.appendChild(Game.renderCard(Game.deck[0]));
@@ -48,7 +56,16 @@ class Player {
         Game.displayTotals();
         if (this.total > 21) this.bust();
         if (this.total == 21) this.stand();
-        if(this.cards.length > 2) this.doubleAvailable = false;
+        if (this.cards.length > 2) this.doubleAvailable = false;
+        if (this.soft) {
+            for (let i = 0; i < this.cards.length; i++) {
+                if (this.cards[i] == 10) {
+                    this.blackjack = true;
+                    this.win();
+                    return 21;
+                }
+            }
+        }
         this.showButtons();
     }
     stand = () => {

@@ -11,10 +11,7 @@ class Blackjack {
         this.shuffle(this.deck);
 
         for (let i = 0; i < this.amountOfPlayers; i++) {
-            const playerDiv = document.createElement("div");
-            playerDiv.className = `player playerID${i}`;
-            playersEL.appendChild(playerDiv);
-            this.players[i] = new Player(`Player${i}`, playerDiv);
+            this.players[i] = new Player(`Player${i}`, document.getElementById(`player${i+1}`));
 
             const buttonDiv = document.createElement("div");
             buttonDiv.className = "buttonDiv";
@@ -57,15 +54,12 @@ class Blackjack {
     double = () => this.players[this.currentPlayer].double();
     nextPlayer = () => {
         this.currentPlayer++;
-        if (this.players[this.currentPlayer]) Game.displayButtons()
+        if (this.players[this.currentPlayer]) Game.displayButtons();
         else this.endGame();
     }
     endGame = () => {
         this.end = true;
         this.dealer.revealSecondCard();
-
-        console.log("Dealer: " + this.dealer.getTotal())
-        console.log("Player 1: " + this.players[0].getTotal())
 
         while (this.dealer.getTotal() < 17 || typeof (this.dealer.getTotal()) == "string") {
             this.dealer.drawCard();
@@ -75,12 +69,17 @@ class Blackjack {
                 this.players[i].win();
             } else if (this.players[i].getTotal() < 21 && this.players[i].getTotal() > this.dealer.getTotal()) {
                 this.players[i].win();
-            } else this.players[i].lose();
+            } else if(this.players[i].getTotal() == this.dealer.getTotal()) {
+                this.players[i].push();
+            } else if(this.players[i].getTotal() == 21 && !this.players[i].blackjack) {
+                this.players[i].win();
+            }
+            else this.players[i].lose();
         }
 
         setTimeout(() => {
             location.reload();
-        }, 2000);
+        }, 10000);
     }
     displayTotals = () => {
         for (let i = 0; i < this.players.length; i++) this.players[i].showTotal();
