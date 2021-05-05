@@ -2,7 +2,7 @@ const express = require("express")
 const app = express()
 const server = require("http").Server(app)
 
-app.use(express.static("/home/sandhaug/web-server/public"));
+app.use(express.static(__dirname+"/public"));
 
 
 const PORT = 8000
